@@ -9,12 +9,10 @@ class AppColors {
   static const Color gray = Color(0xFFF5F5F5);
   static const Color grayDark = Color(0xFF888888);
 
-
   // Gradients
   static const LinearGradient gradientBlue = LinearGradient(
     colors: [blueDark, blueLight],
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
   );
-
 }
