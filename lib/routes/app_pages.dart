@@ -3,12 +3,12 @@ import 'package:kkary_vendors/modules/services_vendor/views/Register/partner.dar
 import 'package:kkary_vendors/routes/app_routes.dart';
 
 class AppPages {
-  static const INITIAL = AppRoutes.PARTNER;
+  static const INITIAL = AppRoutes.partner;
 
   //  static const INITIAL = Routes.WELCOME_CUSTOMER_SCREEN;
   static final routes = [
     GetPage(
-      name: AppRoutes.PARTNER,
+      name: AppRoutes.partner,
       page: () => const Partner(),
     ),
   ];
