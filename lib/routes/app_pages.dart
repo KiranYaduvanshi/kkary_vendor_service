@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/hours.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/Register/partner.dart';
 import 'package:kkary_vendors/modules/services_vendor/work/work.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
@@ -11,6 +12,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.PARTNER,
       page: () => const Partner(),
+    ),
+    GetPage(
+      name: AppRoutes.hours,
+      page: () => const HoursWidget(),
     ),
     GetPage(
       name: AppRoutes.yourWork,
