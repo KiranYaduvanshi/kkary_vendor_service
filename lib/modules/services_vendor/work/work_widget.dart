@@ -6,6 +6,8 @@ import 'package:velocity_x/velocity_x.dart';
 class WorkWidget extends StatelessWidget {
   int val = -1;
 
+  WorkWidget(String s);
+
   @override
   Widget build(BuildContext context) {
     return Container(
