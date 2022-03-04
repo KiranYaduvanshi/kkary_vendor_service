@@ -6,7 +6,7 @@ class AppColors {
   static const Color blueDark = Color(0xFF247BB1);
   static const Color blueMedium = Color(0xFF2FB4FF);
   static const Color blueLight = Color(0xFF3E9BD5);
-  static const Color gray = Color(0xFFF5F5F5);
+  static const Color gray = Color.fromRGBO(245, 245, 245, 1);
   static const Color grayDark = Color(0xFF888888);
 
   // Gradients
