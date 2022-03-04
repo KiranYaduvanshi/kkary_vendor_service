@@ -9,7 +9,8 @@ class CustomeBoxDecorations {
     );
   }
 
-  static BoxDecoration circularInputField({Color borderColor = Colors.black}) {
+  static BoxDecoration circularInputField(
+      {Color borderColor = Colors.black, Color? backColor}) {
     return BoxDecoration(
       border: Border.all(color: borderColor),
       borderRadius: const BorderRadius.all(Radius.circular(25)),
@@ -23,6 +24,14 @@ class CustomeBoxDecorations {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter),
       borderRadius: BorderRadius.all(Radius.circular(0.0)),
+    );
+  }
+
+  static BoxDecoration circularAgree(
+      {Color borderColor = Colors.black, required Color backColor}) {
+    return BoxDecoration(
+      color: backColor,
+      borderRadius: const BorderRadius.all(Radius.circular(8)),
     );
   }
 }

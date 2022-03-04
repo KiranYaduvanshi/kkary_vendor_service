@@ -1,10 +1,11 @@
 import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/hours.dart';
-import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/partner.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/Register/partner.dart';
+import 'package:kkary_vendors/modules/services_vendor/work/work.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 
 class AppPages {
-  static const INITIAL = AppRoutes.hours;
+  static const INITIAL = AppRoutes.yourWork;
 
   //  static const INITIAL = Routes.WELCOME_CUSTOMER_SCREEN;
   static final routes = [
@@ -15,6 +16,10 @@ class AppPages {
     GetPage(
       name: AppRoutes.hours,
       page: () => const HoursWidget(),
-    )
+    ),
+    GetPage(
+      name: AppRoutes.yourWork,
+      page: () => WorkClass(),
+    ),
   ];
 }
