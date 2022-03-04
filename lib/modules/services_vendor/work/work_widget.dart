@@ -9,7 +9,7 @@ class WorkWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecorations.circularBorderLightBlue(),
+      decoration: CustomeBoxDecorations.circularBorderLightBlue(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

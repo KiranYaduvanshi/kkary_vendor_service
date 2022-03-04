@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/partner.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/Register/partner.dart';
 import 'package:kkary_vendors/modules/services_vendor/work/work.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 
