@@ -17,6 +17,16 @@ class CustomeBoxDecorations {
     );
   }
 
+  static BoxDecoration circularBorderLinearGradient() {
+    return const BoxDecoration(
+      gradient: LinearGradient(
+          colors: [AppColors.blueDark, AppColors.blueExtraLight],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter),
+      borderRadius: BorderRadius.all(Radius.circular(0.0)),
+    );
+  }
+
   static BoxDecoration circularAgree(
       {Color borderColor = Colors.black, required Color backColor}) {
     return BoxDecoration(
