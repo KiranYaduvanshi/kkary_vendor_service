@@ -5,7 +5,7 @@ class CustomeBoxDecorations {
   static BoxDecoration circularBorderLightBlue() {
     return BoxDecoration(
       color: Colors.white,
-      border: Border.all(color: AppColors.blueLight),
+      border: Border.all(color: AppColors.blueExtraLight),
       borderRadius: const BorderRadius.all(Radius.circular(15.0)),
     );
   }
