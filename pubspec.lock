@@ -87,7 +87,7 @@ packages:
     source: sdk
     version: "0.0.0"
   get:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: get
       url: "https://pub.dartlang.org"
@@ -197,7 +197,7 @@ packages:
     source: hosted
     version: "2.1.1"
   velocity_x:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: velocity_x
       url: "https://pub.dartlang.org"
