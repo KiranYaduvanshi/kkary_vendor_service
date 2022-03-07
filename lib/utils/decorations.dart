@@ -4,6 +4,7 @@ import 'package:kkary_vendors/utils/app_colors.dart';
 class CustomeBoxDecorations {
   static BoxDecoration circularBorderLightBlue() {
     return BoxDecoration(
+      color: Colors.white,
       border: Border.all(color: AppColors.blueExtraLight),
       borderRadius: const BorderRadius.all(Radius.circular(15.0)),
     );
@@ -12,6 +13,7 @@ class CustomeBoxDecorations {
   static BoxDecoration circularInputField(
       {Color borderColor = Colors.black, Color? backColor}) {
     return BoxDecoration(
+      color: Colors.white,
       border: Border.all(color: borderColor),
       borderRadius: const BorderRadius.all(Radius.circular(25)),
     );

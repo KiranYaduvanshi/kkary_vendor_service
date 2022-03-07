@@ -1,6 +1,8 @@
 class AppRoutes {
   //SERVICES
-  static const PARTNER = '/partner';
+  //Register
+  static const workDoRegister = '/workDo';
+  static const partner = '/partner';
   static const hours = '/hours';
   static const yourWork = '/yourWork';
   static const workDo = '/WorkDoClass';
