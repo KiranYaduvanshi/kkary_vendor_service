@@ -6,19 +6,19 @@ import 'package:kkary_vendors/modules/services_vendor/views/location/location.da
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/work_do/wordDo.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
+import 'package:kkary_vendors/utils/bindings/hours_binding.dart';
 
 class AppPages {
-  static const INITIAL = AppRoutes.location;
-
-  //  static const INITIAL = Routes.WELCOME_CUSTOMER_SCREEN;
+  static const INITIAL = AppRoutes.hours;
   static final routes = [
     GetPage(
-      name: AppRoutes.PARTNER,
+      name: AppRoutes.partner,
       page: () => const Partner(),
     ),
     GetPage(
       name: AppRoutes.hours,
-      page: () => const HoursWidget(),
+      page: () => HoursWidget(),
+      binding: HoursBinding(),
     ),
     GetPage(
       name: AppRoutes.yourWork,
