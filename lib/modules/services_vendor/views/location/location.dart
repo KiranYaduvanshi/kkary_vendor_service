@@ -25,7 +25,7 @@ class LocationClass extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ProgressIndecators.linearProgressIndicator(
+          CommonoWidgets.linearProgressIndicator(
                   text: "Last Step!", value: 0.35)
               .py(16),
           "${AppStrings.location}".text.size(20).bold.make().px(10).py(8),
