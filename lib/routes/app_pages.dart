@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/loginScreen.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/partner.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/sign_up.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/hours.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/work/work.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dart';
@@ -9,19 +11,22 @@ import 'package:kkary_vendors/modules/services_vendor/views/work_do/wordDo.dart'
 import 'package:kkary_vendors/modules/views/earning_page.dart';
 import 'package:kkary_vendors/modules/views/home.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
+import 'package:kkary_vendors/utils/bindings/homeBinding.dart';
 import 'package:kkary_vendors/utils/bindings/hours_binding.dart';
 
 class AppPages {
-  static const INITIAL = AppRoutes.earnings;
+  static const INITIAL = AppRoutes.login;
 
   static final routes = [
     GetPage(
       name: AppRoutes.partner,
       page: () => const Partner(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.workDoRegister,
       page: () => WorkDo(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.hours,
@@ -40,18 +45,27 @@ class AppPages {
     GetPage(
       name: AppRoutes.whereLive,
       page: () => WhereLiveClass(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.location,
       page: () => LocationClass(),
     ),
     GetPage(
+      name: AppRoutes.signUP,
+      page: () => SignUpClass(),
+    ),
+    GetPage(
+      name: AppRoutes.login,
+      page: () => LoginScreen(),
+    ),
+    GetPage(
       name: AppRoutes.home,
-      page: () =>const HomePage(),
+      page: () => const HomePage(),
     ),
     GetPage(
       name: AppRoutes.earnings,
-      page: () =>const EarningPage(),
+      page: () => const EarningPage(),
     ),
   ];
 }

@@ -25,29 +25,30 @@ class HomePage extends StatelessWidget {
               ),
               Image.asset(ImagePaths.imgCloud, fit: BoxFit.fitHeight),
               Container(
-                  height: MediaQuery.of(context).size.height * .3,
-                  width: MediaQuery.of(context).size.width * 1,
-                  color: Colors.white,
-                  child: Column(
-                    children: [
-                      CommonWidgets().commonButton(
-                          ctx: context,
-                          action: () {},
-                          title: "Log In",
-                          bgColor: AppColors.blueLight,
-                          strokeColor: Colors.grey),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      CommonWidgets().commonButton(
-                          action: () => print("kn"),
-                          ctx: context,
-                          strokeColor: AppColors.black,
-                          textColor: AppColors.black,
-                          bgColor: AppColors.white,
-                          title: "New to Kkary? Sign up!"),
-                    ],
-                  ),),
+                height: MediaQuery.of(context).size.height * .3,
+                width: MediaQuery.of(context).size.width * 1,
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    CommonWidgets().commonButton(
+                        ctx: context,
+                        action: () {},
+                        title: "Log In",
+                        bgColor: AppColors.blueLight,
+                        strokeColor: Colors.grey),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    CommonWidgets().commonButton(
+                        action: () => print("kn"),
+                        ctx: context,
+                        strokeColor: AppColors.black,
+                        textColor: AppColors.black,
+                        bgColor: AppColors.white,
+                        title: "New to Kkary? Sign up!"),
+                  ],
+                ),
+              ),
             ],
           ),
         ),

@@ -8,7 +8,8 @@ class AppRoutes {
   static const workDo = '/WorkDoClass';
   static const whereLive = '/WhereLievClass';
   static const location = '/LocationClass';
+  static const signUP = '/SignUpClass';
+  static const login = '/LoginScreen';
   static const home = '/homePage';
   static const earnings = '/earnings';
-
 }

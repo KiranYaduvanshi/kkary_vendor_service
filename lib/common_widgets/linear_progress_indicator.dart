@@ -44,13 +44,13 @@ class CommonWidgets {
       {required Function action,
       Color bgColor = AppColors.blueLight,
       Color strokeColor = AppColors.blueLight,
-        Color textColor = AppColors.white,
-        required BuildContext ctx,
+      Color textColor = AppColors.white,
+      required BuildContext ctx,
       required String title}) {
     return InkWell(
       onTap: () => action(),
       child: Container(
-        width: MediaQuery.of(ctx).size.width*.8,
+        width: MediaQuery.of(ctx).size.width * .8,
         decoration: BoxDecoration(
             color: bgColor,
             borderRadius: BorderRadius.circular(20),
@@ -58,7 +58,12 @@ class CommonWidgets {
               width: 1.0,
               color: strokeColor,
             )),
-        child: title.text.semiBold.color(textColor).size(15).make().centered().py(10),
+        child: title.text.semiBold
+            .color(textColor)
+            .size(15)
+            .make()
+            .centered()
+            .py(10),
       ),
     );
   }
