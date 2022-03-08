@@ -9,6 +9,7 @@ class AppColors {
   static const Color gray = Color(0xFFF5F5F5);
   static const Color grayDark = Color(0xFF888888);
   static const Color white = Colors.white;
+  static const Color blueExtraDark = Color(0xFF18223B);
 
   // Gradients
   static const LinearGradient gradientBlue = LinearGradient(

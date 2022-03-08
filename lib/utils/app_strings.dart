@@ -4,4 +4,5 @@ class AppStrings {
   static const aboutwork = "Tell us About your Work?";
   static const location =
       "Search For the preferred Work \n Location in Gurgaon ";
+  static const orderServiceProvide = "Services will provide";
 }

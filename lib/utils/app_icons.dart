@@ -6,6 +6,7 @@ class AppIcons {
     Icons.search,
     color: AppColors.grayDark,
   );
+
   static const Icon dropDownIcon = Icon(
     Icons.arrow_drop_down,
     color: Colors.black,
@@ -14,5 +15,9 @@ class AppIcons {
   static const Icon dropUpIcon = Icon(
     Icons.arrow_drop_up_outlined,
     color: Colors.black,
+  );
+  static const Icon notification = Icon(
+    Icons.notifications_none_outlined,
+    color: Colors.white,
   );
 }
