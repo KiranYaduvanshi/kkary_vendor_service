@@ -11,4 +11,11 @@ class ListData {
     ["Less than 15,000", "15,000 to 20,000", "More than 20,000"],
     ["Yes", "No"]
   ];
+
+  static List<String> workTitle = [
+    "Beauty Sallon for Women",
+    "Ac Repair and services",
+    "Bathroom Cleaning",
+    "Kitchen Cleaning"
+  ];
 }

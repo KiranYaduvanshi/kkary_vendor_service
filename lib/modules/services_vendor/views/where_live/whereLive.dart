@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkary_vendors/common_widgets/linear_progress_indicator.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/state_controller.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLiveWidget.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
@@ -29,6 +30,9 @@ class WhereLiveClass extends StatelessWidget {
             height: 2,
             color: Colors.blue,
           ).px(10),
+          CommonoWidgets.search(title: '${AppStrings.serachCity}')
+              .px(24)
+              .py(10),
           SingleChildScrollView(
             child: Column(
               children: [

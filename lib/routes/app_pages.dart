@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/loginScreen.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/sign_up.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/partner.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/hours.dart';
@@ -7,20 +9,23 @@ import 'package:kkary_vendors/modules/services_vendor/views/location/location.da
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/work_do/wordDo.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
+import 'package:kkary_vendors/utils/bindings/homeBinding.dart';
 import 'package:kkary_vendors/utils/bindings/hours_binding.dart';
 
 class AppPages {
-  static const INITIAL = AppRoutes.workDoRegister;
+  static const INITIAL = AppRoutes.login;
 
   //  static const INITIAL = Routes.WELCOME_CUSTOMER_SCREEN;
   static final routes = [
     GetPage(
       name: AppRoutes.partner,
       page: () => const Partner(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.workDoRegister,
       page: () => const WorkDo(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.hours,
@@ -38,10 +43,19 @@ class AppPages {
     GetPage(
       name: AppRoutes.whereLive,
       page: () => WhereLiveClass(),
+      binding: HomeBinding(),
     ),
     GetPage(
       name: AppRoutes.location,
       page: () => LocationClass(),
+    ),
+    GetPage(
+      name: AppRoutes.signUP,
+      page: () => SignUpClass(),
+    ),
+    GetPage(
+      name: AppRoutes.login,
+      page: () => LoginScreen(),
     ),
   ];
 }

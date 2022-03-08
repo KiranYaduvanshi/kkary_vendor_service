@@ -33,11 +33,12 @@ class WorkClass extends StatelessWidget {
                   for (int i = 0; i < radioContoller.title.length; i++)
                     // WorkWidget().p(10),
                     radioGroup(
-                            radioList: radioContoller.radiodDataList,
-                            title: radioContoller.title[i],
-                            selectedVal: radioContoller.radioExperience,
-                            index: i)
-                        .p(10)
+                      radioList: radioContoller.radiodDataList,
+                      title: radioContoller.title[i],
+                      selectedVal: radioContoller.radioExperience,
+                      index: i,
+                      select: radioContoller.onSelectRadioOption,
+                    ).p(10)
                 ],
               ),
             ).expand(),

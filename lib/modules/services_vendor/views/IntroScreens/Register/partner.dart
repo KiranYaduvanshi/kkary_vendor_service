@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:kkary_vendors/common_widgets/continue_button.dart';
 import 'package:kkary_vendors/common_widgets/linear_progress_indicator.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/state_controller.dart';
+import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_icons.dart';
 import 'package:kkary_vendors/utils/decorations.dart';
@@ -14,6 +17,8 @@ class Partner extends StatefulWidget {
 }
 
 class _PartnerState extends State<Partner> {
+  var controller = Get.find<RadioController>();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -80,10 +85,12 @@ class _PartnerState extends State<Partner> {
                           children: [
                             "By preoceeding, you agree to Kkary Company’s"
                                 .text
+                                .size(12)
                                 .make()
                                 .py12(),
                             "Terms & Conditions and Privacy policy"
                                 .text
+                                .size(10)
                                 .bold
                                 .make(),
                           ],
@@ -105,15 +112,20 @@ class _PartnerState extends State<Partner> {
   }
 
   Widget fields({required String title, required Widget widget}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        title.text.make().px16(),
-        Container(
-          decoration: CustomeBoxDecorations.circularInputField(),
-          child: widget.py8().px12(),
-        ).py8()
-      ],
+    return InkWell(
+      onTap: () {
+        Get.toNamed(AppRoutes.workDo);
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          title.text.make().px16(),
+          Container(
+            decoration: CustomeBoxDecorations.circularInputField(),
+            child: widget.py8().px12(),
+          ).py8()
+        ],
+      ),
     );
   }
 
