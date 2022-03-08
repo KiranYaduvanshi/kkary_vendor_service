@@ -31,7 +31,7 @@ class WorkDoClass extends StatelessWidget {
             height: 2,
             color: Colors.blue,
           ).px(10),
-          CommonoWidgets.search(title: "${AppStrings.workDoSearch}")
+          CommonWidgets.search(title: "${AppStrings.workDoSearch}")
               .px(24)
               .py(10),
           "${AppStrings.categories}"

@@ -26,7 +26,7 @@ class _PartnerState extends State<Partner> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          CommonoWidgets.linearProgressIndicator(
+          CommonWidgets.linearProgressIndicator(
                   text: "Few more steps to start your earning", value: 0.2)
               .py(16),
           SingleChildScrollView(

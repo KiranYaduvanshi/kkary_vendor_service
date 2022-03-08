@@ -30,9 +30,7 @@ class WhereLiveClass extends StatelessWidget {
             height: 2,
             color: Colors.blue,
           ).px(10),
-          CommonoWidgets.search(title: '${AppStrings.serachCity}')
-              .px(24)
-              .py(10),
+          CommonWidgets.search(title: '${AppStrings.serachCity}').px(24).py(10),
           SingleChildScrollView(
             child: Column(
               children: [

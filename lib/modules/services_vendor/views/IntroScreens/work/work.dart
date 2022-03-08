@@ -17,7 +17,11 @@ class WorkClass extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+<<<<<<< HEAD
             CommonoWidgets.linearProgressIndicator(
+=======
+            CommonWidgets.linearProgressIndicator(
+>>>>>>> 2858de0092dd40304136b0d2d070855d58e3552e
                     text: "Almost Done!", value: 0.35)
                 .py(16),
             "Tell us about your work".text.size(20).bold.make().px(10).py(8),

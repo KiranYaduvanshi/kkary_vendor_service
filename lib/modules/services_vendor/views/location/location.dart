@@ -26,16 +26,15 @@ class LocationClass extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CommonoWidgets.linearProgressIndicator(
-                  text: "Last Step!", value: 0.35)
-              .py(10),
-          "${AppStrings.location}".text.size(20).bold.make().px(10).py(8),
+          CommonWidgets.linearProgressIndicator(text: "Last Step!", value: 0.35)
+              .py(16),
+          AppStrings.location.text.size(20).bold.make().px(10).py(8),
           Container(
             width: 80,
             height: 2,
             color: Colors.blue,
           ).px(10),
-          CommonoWidgets.search(title: '${AppStrings.serachLocation}')
+          CommonWidgets.search(title: '${AppStrings.serachLocation}')
               .px(24)
               .py(10),
           SingleChildScrollView(

@@ -10,4 +10,6 @@ class AppRoutes {
   static const location = '/LocationClass';
   static const signUP = '/SignUpClass';
   static const login = '/LoginScreen';
+  static const home = '/homePage';
+  static const earnings = '/earnings';
 }
