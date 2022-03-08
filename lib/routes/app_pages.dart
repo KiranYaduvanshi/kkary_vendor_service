@@ -1,10 +1,7 @@
 import 'package:get/get.dart';
-<<<<<<< HEAD
 import 'package:kkary_vendors/modules/services_vendor/binding/order_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dart';
-=======
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/loginScreen.dart';
->>>>>>> 2292f4a35065ac003aed0a2730968029a78b97d5
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/partner.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/sign_up.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/hours.dart';
