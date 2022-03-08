@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/common_widgets/linear_progress_indicator.dart';
@@ -18,7 +17,7 @@ class WorkClass extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CommonoWidgets.linearProgressIndicator(
+            CommonWidgets.linearProgressIndicator(
                     text: "Almost Done!", value: 0.35)
                 .py(16),
             "Tell us about your work".text.size(20).bold.make().px(10).py(8),
@@ -34,11 +33,12 @@ class WorkClass extends StatelessWidget {
                   for (int i = 0; i < radioContoller.title.length; i++)
                     // WorkWidget().p(10),
                     radioGroup(
-                            radioList: radioContoller.radiodDataList,
-                            title: radioContoller.title[i],
-                            selectedVal: radioContoller.radioExperience,
-                            index: i)
-                        .p(10)
+                      radioList: radioContoller.radiodDataList,
+                      title: radioContoller.title[i],
+                      selectedVal: radioContoller.radioExperience,
+                      index: i,
+                      select: radioContoller.onSelectRadioOption,
+                    ).p(10)
                 ],
               ),
             ).expand(),

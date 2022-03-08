@@ -15,6 +15,7 @@ class LocationClass extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -25,15 +26,17 @@ class LocationClass extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CommonoWidgets.linearProgressIndicator(
-                  text: "Last Step!", value: 0.35)
+          CommonWidgets.linearProgressIndicator(text: "Last Step!", value: 0.35)
               .py(16),
-          "${AppStrings.location}".text.size(20).bold.make().px(10).py(8),
+          AppStrings.location.text.size(20).bold.make().px(10).py(8),
           Container(
             width: 80,
             height: 2,
             color: Colors.blue,
           ).px(10),
+          CommonWidgets.search(title: '${AppStrings.serachLocation}')
+              .px(24)
+              .py(10),
           SingleChildScrollView(
             child: Column(
               children: [

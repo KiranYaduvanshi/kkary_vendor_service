@@ -9,4 +9,8 @@ class AppRoutes {
   static const whereLive = '/WhereLievClass';
   static const location = '/LocationClass';
   static const orders = '/orders';
+  static const signUP = '/SignUpClass';
+  static const login = '/LoginScreen';
+  static const home = '/homePage';
+  static const earnings = '/earnings';
 }

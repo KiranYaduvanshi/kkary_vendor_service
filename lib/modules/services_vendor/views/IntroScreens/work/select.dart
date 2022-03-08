@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/registerController.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
+import 'package:kkary_vendors/utils/controllers/registerController.dart';
 import 'package:kkary_vendors/utils/decorations.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:get/get.dart';
 
-Widget radioGroup(
-    {required List<dynamic> radioList,
-    required String title,
-    required int index,
-    required RxInt selectedVal}) {
+Widget radioGroup({
+  required List<dynamic> radioList,
+  required String title,
+  required int index,
+  required RxInt selectedVal,
+  required Function select,
+}) {
+  Get.find<RegisterController>();
+
   return Container(
     decoration: CustomeBoxDecorations.circularBorderLightBlue(),
     child: Column(
@@ -33,6 +39,8 @@ Widget radioGroup(
                         groupValue: selectedVal.value,
                         onChanged: (int? value) {
                           selectedVal.value = value!;
+                          select();
+
                           print(
                               "index ----${selectedVal.value}  --- title--- ${radioList[index][i]}");
                         }),

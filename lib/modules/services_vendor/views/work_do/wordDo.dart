@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkary_vendors/common_widgets/linear_progress_indicator.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/state_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
+import 'package:kkary_vendors/utils/app_strings.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -23,13 +25,16 @@ class WorkDoClass extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          "Tell us about your work".text.size(20).bold.make().px(10).py(8),
+          "${AppStrings.aboutwork}".text.size(20).bold.make().px(10).py(8),
           Container(
             width: 80,
             height: 2,
             color: Colors.blue,
           ).px(10),
-          "Categories"
+          CommonWidgets.search(title: "${AppStrings.workDoSearch}")
+              .px(24)
+              .py(10),
+          "${AppStrings.categories}"
               .text
               .bold
               .color(AppColors.blueLight)
@@ -39,15 +44,18 @@ class WorkDoClass extends StatelessWidget {
               .py(10),
           SingleChildScrollView(
             child: Column(
-              children: [for (int i = 0; i < 5; i++) WorkDowidget(i).p(5)],
+              children: [
+                for (int i = 0; i < radioContoller.workTitle.length; i++)
+                  WorkDowidget(i, radioContoller.workTitle[i]).p(5)
+              ],
             ),
-          )
+          ).expand()
         ],
       ),
     );
   }
 
-  Widget WorkDowidget(int index) {
+  Widget WorkDowidget(int index, String title) {
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,7 +83,7 @@ class WorkDoClass extends StatelessWidget {
                   color: Colors.amber,
                 ),
               ).p(5),
-              "Beauty Saloon for Women".text.make().px(10)
+              "${title}".text.make().px(10)
             ],
           ),
           Obx(
@@ -84,7 +92,11 @@ class WorkDoClass extends StatelessWidget {
                 groupValue: radioContoller.radioworkDo.value,
                 onChanged: (int? value) {
                   radioContoller.radioworkDo.value = value!;
+                  radioContoller.onSelectRadioOption(index);
+                  Get.back();
                   print("value---- ${radioContoller.radioworkDo.value}");
+                  print(
+                      "value list item---- ${radioContoller.onSelectRadioOption}");
                 }),
           ),
         ],
