@@ -4,21 +4,20 @@ import 'package:kkary_vendors/utils/app_icons.dart';
 import 'package:kkary_vendors/utils/decorations.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class CommonoWidgets {
-
- static Widget search({required String title}) {
-  return Container(
-    decoration: CustomeBoxDecorations.circularInputField(),
-    child: TextField(
-      decoration: InputDecoration(
-        border: InputBorder.none,
-        icon: AppIcons.searchIcon,
-        hintText: title,
-        hintStyle: const TextStyle(color: Colors.grey),
-      ),
-    ).px20(),
-  ).py8();
-}
+class CommonWidgets {
+  static Widget search({required String title}) {
+    return Container(
+      decoration: CustomeBoxDecorations.circularInputField(),
+      child: TextField(
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          icon: AppIcons.searchIcon,
+          hintText: title,
+          hintStyle: const TextStyle(color: Colors.grey),
+        ),
+      ).px20(),
+    ).py8();
+  }
 
   static Widget linearProgressIndicator(
       {required String text, required double value}) {
@@ -37,6 +36,29 @@ class CommonoWidgets {
             alignment: Alignment.centerLeft,
           ).px8(),
         ],
+      ),
+    );
+  }
+
+  Widget commonButton(
+      {required Function action,
+      Color bgColor = AppColors.blueLight,
+      Color strokeColor = AppColors.blueLight,
+        Color textColor = AppColors.white,
+        required BuildContext ctx,
+      required String title}) {
+    return InkWell(
+      onTap: () => action(),
+      child: Container(
+        width: MediaQuery.of(ctx).size.width*.8,
+        decoration: BoxDecoration(
+            color: bgColor,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              width: 1.0,
+              color: strokeColor,
+            )),
+        child: title.text.semiBold.color(textColor).size(15).make().centered().py(10),
       ),
     );
   }
