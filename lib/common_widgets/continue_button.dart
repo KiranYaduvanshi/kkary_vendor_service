@@ -25,4 +25,18 @@ class CustomeButtons {
       ).p20(),
     );
   }
+
+  Widget button({required String text, required Color color}) {
+    return ElevatedButton(
+      onPressed: () {},
+      child: text.text.make(),
+      style: ElevatedButton.styleFrom(
+        primary: color,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
+        elevation: 6,
+      ),
+    ).p16();
+  }
 }

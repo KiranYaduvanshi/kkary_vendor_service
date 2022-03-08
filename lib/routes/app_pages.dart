@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/services_vendor/binding/order_binding.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/loginScreen.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/partner.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/sign_up.dart';
@@ -6,6 +8,7 @@ import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/hours.d
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/work/work.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/location/location.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/orders.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/work_do/wordDo.dart';
 import 'package:kkary_vendors/modules/views/earning_page.dart';
@@ -50,6 +53,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.location,
       page: () => LocationClass(),
+    ),
+    GetPage(
+      name: AppRoutes.orders,
+      page: () => Orders(),
+      binding: OrderBinding(),
     ),
     GetPage(
       name: AppRoutes.signUP,
