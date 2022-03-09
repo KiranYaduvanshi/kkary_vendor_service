@@ -105,7 +105,7 @@ class _PartnerState extends State<Partner> {
               ],
             ),
           ).expand(),
-          CustomeButtons().continueButton(),
+          CustomButtons().continueButton(),
         ],
       ),
     ));

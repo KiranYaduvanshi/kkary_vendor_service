@@ -13,7 +13,7 @@ class AppStrings {
   static const facebook = "Continue With Facebook ";
   static const google = "Continue With Google ";
   static const forgotPassword = "Forgot Password? ";
-  static const alreadyAccount = "Already Have An Account ?";
+  static const alreadyAccount = "Already Have An Account? ";
   static const signIn = "Sign In";
   static const location =
       "Search For the preferred Work \n Location in Gurgaon ";

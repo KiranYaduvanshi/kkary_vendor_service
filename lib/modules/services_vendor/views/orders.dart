@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/common_widgets/continue_button.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/order_ctl.dart';
+import 'package:kkary_vendors/modules/views/earning_page.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_icons.dart';
-import 'package:kkary_vendors/utils/app_images.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
 import 'package:kkary_vendors/utils/decorations.dart';
+import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class Orders extends StatelessWidget {
   Orders({Key? key}) : super(key: key);
 
-  OrderController controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,13 @@ class Orders extends StatelessWidget {
         backgroundColor: AppColors.blueLight,
         title: "Orders".text.make(),
         actions: [
-          AppIcons.notification.paddingOnly(right: 10),
+          InkWell(
+            onTap: () => Get.to(const EarningPage(),
+                transition: Transition.zoom,
+                duration: const Duration(seconds: 3),
+            ),
+            child: AppIcons.notification.paddingOnly(right: 10),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -38,6 +44,8 @@ class Orders extends StatelessWidget {
       ),
     );
   }
+  
+  OrderController controller = Get.find();
 
   Widget requestCard(BuildContext context) {
     return Card(
@@ -56,7 +64,8 @@ class Orders extends StatelessWidget {
                 backgroundColor: AppColors.blueLight,
                 radius: 25,
                 child: CircleAvatar(
-                  foregroundImage: AssetImage(AppImages.profileImage),
+                  // foregroundImage: AssetImage(AppImages.profileImage),
+                  foregroundImage: AssetImage(ImagePaths.imgUser),
                   backgroundColor: AppColors.blueLight,
                   radius: 24,
                 ),
@@ -90,16 +99,16 @@ class Orders extends StatelessWidget {
           const Text(AppStrings.orderServiceProvide).p12(),
           Wrap(
             children: [
-              for (var item in controller.servicesList) servicer(item).p4(),
+              for (var item in controller.servicesList) services(item).p4(),
             ],
           ).px8(),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              CustomeButtons()
+              CustomButtons()
                   .button(text: "Decline", color: AppColors.blueExtraDark)
                   .w40(context),
-              CustomeButtons()
+              CustomButtons()
                   .button(text: "Accept", color: AppColors.blueLight)
                   .w40(context),
             ],
@@ -109,7 +118,7 @@ class Orders extends StatelessWidget {
     );
   }
 
-  Widget servicer(String service) {
+  Widget services(String service) {
     return Container(
       decoration: CustomeBoxDecorations.circularInputField(
           borderColor: AppColors.blueLight),

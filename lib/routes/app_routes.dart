@@ -13,4 +13,5 @@ class AppRoutes {
   static const login = '/LoginScreen';
   static const home = '/homePage';
   static const earnings = '/earnings';
+  static const profile = '/profile';
 }
