@@ -8,4 +8,9 @@ class ImagePaths {
   static const String appLogo = "assets/images/img_app_logo.png";
   static const String imgCloud = "assets/images/img_cloud_home.png";
   static const String imgMainFrame = "assets/images/img_main_home.png";
+  static const String imgUser = "assets/images/img_user.png";
+  static const String myOrders = "assets/images/img_cart.png";
+  static const String myDetails = "assets/images/my_details.png";
+  static const String notifications = "assets/images/img_notification.png";
+  static const String logout = "assets/images/img_logout.png";
 }

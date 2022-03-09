@@ -34,7 +34,7 @@ class LocationClass extends StatelessWidget {
             height: 2,
             color: Colors.blue,
           ).px(10),
-          CommonWidgets.search(title: '${AppStrings.serachLocation}')
+          CommonWidgets.search(title: AppStrings.serachLocation)
               .px(24)
               .py(10),
           SingleChildScrollView(

@@ -217,7 +217,7 @@ class _HoursWidgetState extends State<HoursWidget> {
               ),
             ).expand(),
             Container(
-              child: CustomeButtons().continueButton(),
+              child: CustomButtons().continueButton(),
             )
           ],
         ),
