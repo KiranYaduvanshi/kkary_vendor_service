@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kkary_vendors/common_widgets/continue_button.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/hours_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
-import 'package:kkary_vendors/utils/controllers/hours_controller.dart';
 import 'package:kkary_vendors/utils/decorations.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';

@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/services_vendor/binding/homeBinding.dart';
+import 'package:kkary_vendors/modules/services_vendor/binding/hours_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/order_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/loginScreen.dart';
@@ -14,8 +16,6 @@ import 'package:kkary_vendors/modules/services_vendor/views/work_do/wordDo.dart'
 import 'package:kkary_vendors/modules/views/earning_page.dart';
 import 'package:kkary_vendors/modules/views/home.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
-import 'package:kkary_vendors/utils/bindings/homeBinding.dart';
-import 'package:kkary_vendors/utils/bindings/hours_binding.dart';
 
 class AppPages {
   static const INITIAL = AppRoutes.login;

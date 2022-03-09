@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/registerController.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
-import 'package:kkary_vendors/utils/controllers/registerController.dart';
 import 'package:kkary_vendors/utils/decorations.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:get/get.dart';
