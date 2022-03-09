@@ -3,7 +3,7 @@ import 'package:kkary_vendors/utils/app_colors.dart';
 
 import 'package:velocity_x/velocity_x.dart';
 
-class CustomeButtons {
+class CustomButtons {
   Widget continueButton() {
     return Container(
       width: double.infinity,

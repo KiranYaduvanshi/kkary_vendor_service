@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kkary_vendors/modules/views/profile_screen.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
+import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:get/get.dart';
 class EarningPage extends StatelessWidget {
@@ -10,12 +12,13 @@ class EarningPage extends StatelessWidget {
   Widget build(BuildContext context) {
     String totalEarning = "1,200";
     return Scaffold(
+      backgroundColor: AppColors.white,
       appBar: AppBar(
         title: "Earning".text.make(),
         centerTitle: true,
         backgroundColor: AppColors.blueLight,
-        leading: const Icon(Icons.arrow_back),
-        actions: [const Icon(Icons.notifications_none_outlined).px(6)],
+        // leading: const Icon(Icons.arrow_back),
+        actions: [const Icon(Icons.notifications_none_outlined).px(10)],
       ),
       body: Column(
         children: [
@@ -65,14 +68,17 @@ class EarningPage extends StatelessWidget {
                     for(int i = 0;i<10;i++)
                     items(
                       context: context,
-                      image: "",
+                      image: ImagePaths.imgUser,
                       amount: "157",
                       name: "Nitish Kumar",
                       hashTag: "#5625",
+                      onTapAction: (){
+                        Get.to(const ProfileScreen());
+                      },
                     )
                   ],
                 ),
-              ),
+              ).expand(),
 
         ],
       ),
@@ -85,55 +91,63 @@ class EarningPage extends StatelessWidget {
     required String amount,
     required String name,
     required String hashTag,
+    required Function onTapAction,
   }) {
-    return Card(
-      elevation: 4,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width * .93,
-        child: Row(
-          children: [
-            Row(
-              children: [
-                const CircleAvatar(
-                  radius: 25,
-                  backgroundColor: AppColors.blueLight,
-                  child: CircleAvatar(
-                      radius: 24, backgroundColor: AppColors.white),
-                ).py(10).px(10),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: Get.width*.7,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          name.text.fontWeight(FontWeight.w500).make(),
-                          Row(
-                            children: [
-                              "\$$amount".text.semiBold.color(AppColors.blueLight).make(),
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              const Icon(
-                                CupertinoIcons.arrow_down_circle_fill,
-                                color: AppColors.blueLight,
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
+    return InkWell(
+      onTap:() => onTapAction(),
+      child: Card(
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.0),
+        ),
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width * .93,
+          child: Row(
+            children: [
+              Row(
+                children: [
+                  const CircleAvatar(
+                    backgroundColor: AppColors.blueLight,
+                    radius: 25,
+                    child: CircleAvatar(
+                      // foregroundImage: AssetImage(AppImages.profileImage),
+                      foregroundImage: AssetImage(ImagePaths.imgUser),
+                      backgroundColor: AppColors.blueLight,
+                      radius: 24,
                     ),
-                    hashTag.text.color(AppColors.grayDark).make().py(4),
-                  ],
-                )
-              ],
-            ),
+                  ).py(10).px(10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        width: Get.width*.7,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            name.text.fontWeight(FontWeight.w500).make(),
+                            Row(
+                              children: [
+                                "\$$amount".text.semiBold.color(AppColors.blueLight).make(),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                const Icon(
+                                  CupertinoIcons.arrow_down_circle_fill,
+                                  color: AppColors.blueLight,
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      hashTag.text.color(AppColors.grayDark).make().py(4),
+                    ],
+                  )
+                ],
+              ),
 
-          ],
+            ],
+          ),
         ),
       ),
     );
