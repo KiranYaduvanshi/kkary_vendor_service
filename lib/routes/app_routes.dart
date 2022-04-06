@@ -6,7 +6,7 @@ class AppRoutes {
   static const hours = '/hours';
   static const yourWork = '/yourWork';
   static const workDo = '/WorkDoClass';
-  static const whereLive = '/WhereLievClass';
+  static const whereLive = '/WhereLiveClass';
   static const location = '/LocationClass';
   static const orders = '/orders';
   static const signUP = '/SignUpClass';
