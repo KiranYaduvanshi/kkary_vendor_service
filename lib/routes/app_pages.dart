@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/order_details_page.dart';
 import 'package:kkary_vendors/modules/mart_vendor/binding/mart_all_product_binding.dart';
 import 'package:kkary_vendors/modules/mart_vendor/binding/mart_bottom_navigation-binding.dart';
 import 'package:kkary_vendors/modules/mart_vendor/binding/mart_home_binding.dart';
@@ -24,7 +25,7 @@ import 'package:kkary_vendors/modules/views/profile_screen.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 
 class AppPages {
-  static const homeRoute = AppRoutes.bottomNavigationMart;
+  static const homeRoute = AppRoutes.orderDetails;
 
   static final routes = [
     GetPage(
@@ -87,6 +88,10 @@ class AppPages {
     ),
 
     //Mart
+    GetPage(
+      name: AppRoutes.orderDetails,
+      page: () => const OrderDetailsPage(),
+    ),
     GetPage(
       name: AppRoutes.homeMart,
       page: () => const MartHome(),
