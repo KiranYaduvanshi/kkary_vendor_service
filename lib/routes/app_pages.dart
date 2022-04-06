@@ -8,6 +8,7 @@ import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Registe
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/hours.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/work/work.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/all_product.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/location/location.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/orders.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
@@ -18,7 +19,7 @@ import 'package:kkary_vendors/modules/views/profile_screen.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 
 class AppPages {
-  static const homeRoute = AppRoutes.home;
+  static const homeRoute = AppRoutes.allProducts;
 
   static final routes = [
     GetPage(
@@ -74,11 +75,14 @@ class AppPages {
     GetPage(
       name: AppRoutes.earnings,
       page: () => const EarningPage(),
-
     ),
     GetPage(
       name: AppRoutes.profile,
       page: () => const ProfileScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.allProducts,
+      page: () => AllProductscreen(),
     ),
   ];
 }

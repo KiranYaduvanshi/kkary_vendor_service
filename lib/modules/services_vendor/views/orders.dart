@@ -24,9 +24,10 @@ class Orders extends StatelessWidget {
         title: "Orders".text.make(),
         actions: [
           InkWell(
-            onTap: () => Get.to(const EarningPage(),
-                transition: Transition.zoom,
-                duration: const Duration(seconds: 3),
+            onTap: () => Get.to(
+              const EarningPage(),
+              transition: Transition.zoom,
+              duration: const Duration(seconds: 3),
             ),
             child: AppIcons.notification.paddingOnly(right: 10),
           ),
@@ -44,7 +45,7 @@ class Orders extends StatelessWidget {
       ),
     );
   }
-  
+
   OrderController controller = Get.find();
 
   Widget requestCard(BuildContext context) {
