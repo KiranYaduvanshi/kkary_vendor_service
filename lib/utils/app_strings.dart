@@ -16,8 +16,9 @@ class AppStrings {
   static const alreadyAccount = "Already Have An Account? ";
   static const signIn = "Sign In";
   static const String productImg = "Product Image";
+  static const String allProducts = "All Products";
   static const String productName = "Product Name";
-  static const productPrice = "MRP Price";
+  static const String productPrice = "MRP Price";
   static const String status = "Status";
   static const String sellingPrice = "Selling Price";
   static const String productQty = "Product QTY";
