@@ -13,4 +13,6 @@ class ImagePaths {
   static const String myDetails = "assets/images/my_details.png";
   static const String notifications = "assets/images/img_notification.png";
   static const String logout = "assets/images/img_logout.png";
+  static const String money = "assets/images/ic_money.png";
+  static const String circulerPerson = "assets/images/ic_circuler_user.png";
 }
