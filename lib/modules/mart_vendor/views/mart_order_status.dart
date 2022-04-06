@@ -1,14 +1,11 @@
-import 'dart:async';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
 
-class OrderDetailsPage extends StatelessWidget {
-  const OrderDetailsPage({Key? key}) : super(key: key);
+class MartOrderStatus extends StatelessWidget {
+  const MartOrderStatus({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
