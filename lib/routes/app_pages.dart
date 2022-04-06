@@ -1,4 +1,8 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/mart_vendor/binding/mart_bottom_navigation-binding.dart';
+import 'package:kkary_vendors/modules/mart_vendor/binding/mart_home_binding.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/mart_bottom_navigation.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/mart_home.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/homeBinding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/hours_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/order_binding.dart';
@@ -18,7 +22,7 @@ import 'package:kkary_vendors/modules/views/profile_screen.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 
 class AppPages {
-  static const homeRoute = AppRoutes.home;
+  static const homeRoute = AppRoutes.bottomNavigationMart;
 
   static final routes = [
     GetPage(
@@ -74,11 +78,22 @@ class AppPages {
     GetPage(
       name: AppRoutes.earnings,
       page: () => const EarningPage(),
-
     ),
     GetPage(
       name: AppRoutes.profile,
       page: () => const ProfileScreen(),
+    ),
+
+    //Mart
+    GetPage(
+      name: AppRoutes.homeMart,
+      page: () => const MartHome(),
+      binding: MartHomeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.bottomNavigationMart,
+      page: () => const MartBottomNavigation(),
+      binding: MartBottomNavigationBinding(),
     ),
   ];
 }

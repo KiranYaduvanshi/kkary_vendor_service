@@ -5,12 +5,13 @@ import 'package:kkary_vendors/common_widgets/linear_progress_indicator.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/state_controller.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLiveWidget.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
-import 'package:velocity_x/src/extensions/string_ext.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class LocationClass extends StatelessWidget {
   var controller = Get.put(RadioController());
   var radioContoller = Get.find<RadioController>();
+
+  LocationClass({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +35,7 @@ class LocationClass extends StatelessWidget {
             height: 2,
             color: Colors.blue,
           ).px(10),
-          CommonWidgets.search(title: AppStrings.serachLocation)
-              .px(24)
-              .py(10),
+          CommonWidgets.search(title: AppStrings.serachLocation).px(24).py(10),
           SingleChildScrollView(
             child: Column(
               children: [
