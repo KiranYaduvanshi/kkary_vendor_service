@@ -16,6 +16,34 @@ class AppStrings {
   static const forgotPassword = "Forgot Password? ";
   static const alreadyAccount = "Already Have An Account? ";
   static const signIn = "Sign In";
+  static const String productImg = "Product Image";
+  static const String productName = "Product Name";
+  static const productPrice = "MRP Price";
+  static const String status = "Status";
+  static const String sellingPrice = "Selling Price";
+  static const String productQty = "Product QTY";
+  static const String selectCat = "Select Category ";
+  static const String selectSubCat = "Select Sub Category ";
+  static const String selectBrand = "Select Brand  ";
+  static const String selectMesurment = "Select Measurement";
+  static const String enterVolume = "Enter Volume";
+  static const String enterProductName = "Enter Product Name";
+  static const String enterProductQTY = "Enter Product Quantity";
+  static const String enterMrpPrice = "Enter MRP Price(Per Product)";
+  static const String enterVendorPrice = "Enter Vendor Price(Per Product)";
+  static const String enterTax = "Enter Tax(%)";
+  static const String deliveryCharges = "Delivery Charges";
+  static const String productSku = "Product SKU";
+  static const String productTag = "Product Tags";
+  static const String publish = "Publish ";
+  static const String draft = "Draft ";
+  static const String enterProSummary = "Enter Product Summary ";
+  static const String enterProDescription = "Enter Product Desciption ";
+  static const String save = "Save ";
+  static const String addProduct = "Add Product ";
+
+  static const String clickToUploadImg = "Click Here to Upload Image ";
+
   static const location =
       "Search For the preferred Work \n Location in Gurgaon ";
   static const orderServiceProvide = "Services will provide";

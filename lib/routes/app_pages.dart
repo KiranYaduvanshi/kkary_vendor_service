@@ -1,5 +1,10 @@
 import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/mart_vendor/views/order_details_page.dart';
+import 'package:kkary_vendors/modules/mart_vendor/binding/mart_all_product_binding.dart';
+import 'package:kkary_vendors/modules/mart_vendor/binding/mart_bottom_navigation-binding.dart';
+import 'package:kkary_vendors/modules/mart_vendor/binding/mart_home_binding.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/mart_bottom_navigation.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/mart_home.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/homeBinding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/hours_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/order_binding.dart';
@@ -9,6 +14,7 @@ import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Registe
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/hours.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/work/work.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/mart_all_product.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/location/location.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/orders.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
@@ -80,9 +86,26 @@ class AppPages {
       name: AppRoutes.profile,
       page: () => const ProfileScreen(),
     ),
+
+    //Mart
     GetPage(
       name: AppRoutes.orderDetails,
       page: () => const OrderDetailsPage(),
+    ),
+    GetPage(
+      name: AppRoutes.homeMart,
+      page: () => const MartHome(),
+      binding: MartHomeBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.bottomNavigationMart,
+      page: () => const MartBottomNavigation(),
+      binding: MartBottomNavigationBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.allProducts,
+      page: () => MartAllProductscreen(),
+      binding: MartAllProductBinding(),
     ),
   ];
 }
