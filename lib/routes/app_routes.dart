@@ -18,4 +18,5 @@ class AppRoutes {
   //Mart
   static const homeMart = '/homeMart';
   static const bottomNavigationMart = '/bottomNavoigationMart';
+  static const allProducts = '/allProducts';
 }

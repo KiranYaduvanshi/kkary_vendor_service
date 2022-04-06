@@ -5,6 +5,7 @@ import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:get/get.dart';
+
 class EarningPage extends StatelessWidget {
   const EarningPage({Key? key}) : super(key: key);
 
@@ -60,26 +61,23 @@ class EarningPage extends StatelessWidget {
               )
             ],
           ).py8().px(8),
-
-
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    for(int i = 0;i<10;i++)
-                    items(
-                      context: context,
-                      image: ImagePaths.imgUser,
-                      amount: "157",
-                      name: "Nitish Kumar",
-                      hashTag: "#5625",
-                      onTapAction: (){
-                        Get.to(const ProfileScreen());
-                      },
-                    )
-                  ],
-                ),
-              ).expand(),
-
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                for (int i = 0; i < 10; i++)
+                  items(
+                    context: context,
+                    image: ImagePaths.imgUser,
+                    amount: "157",
+                    name: "Nitish Kumar",
+                    hashTag: "#5625",
+                    onTapAction: () {
+                      Get.to(const ProfileScreen());
+                    },
+                  )
+              ],
+            ),
+          ).expand(),
         ],
       ),
     );
@@ -94,7 +92,7 @@ class EarningPage extends StatelessWidget {
     required Function onTapAction,
   }) {
     return InkWell(
-      onTap:() => onTapAction(),
+      onTap: () => onTapAction(),
       child: Card(
         elevation: 2,
         shape: RoundedRectangleBorder(
@@ -120,14 +118,18 @@ class EarningPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        width: Get.width*.7,
+                        width: Get.width * .7,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             name.text.fontWeight(FontWeight.w500).make(),
                             Row(
                               children: [
-                                "\$$amount".text.semiBold.color(AppColors.blueLight).make(),
+                                "\$$amount"
+                                    .text
+                                    .semiBold
+                                    .color(AppColors.blueLight)
+                                    .make(),
                                 const SizedBox(
                                   width: 10,
                                 ),
@@ -145,7 +147,6 @@ class EarningPage extends StatelessWidget {
                   )
                 ],
               ),
-
             ],
           ),
         ),
