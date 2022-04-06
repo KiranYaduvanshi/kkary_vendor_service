@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/order_details_page.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/homeBinding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/hours_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/order_binding.dart';
@@ -18,7 +19,7 @@ import 'package:kkary_vendors/modules/views/profile_screen.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 
 class AppPages {
-  static const homeRoute = AppRoutes.home;
+  static const homeRoute = AppRoutes.orderDetails;
 
   static final routes = [
     GetPage(
@@ -74,11 +75,14 @@ class AppPages {
     GetPage(
       name: AppRoutes.earnings,
       page: () => const EarningPage(),
-
     ),
     GetPage(
       name: AppRoutes.profile,
       page: () => const ProfileScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.orderDetails,
+      page: () => const OrderDetailsPage(),
     ),
   ];
 }

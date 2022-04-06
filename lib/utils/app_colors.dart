@@ -12,6 +12,12 @@ class AppColors {
   static const Color blueExtraDark = Color(0xFF18223B);
   static const Color orange = Color(0xFFF6460D);
   static const Color black = Colors.black;
+  static const Color lightGray = Color(0xffd2eaf9);
+  static const Color darkGray = Color(0xffE0E0E0);
+  static const Color ultraLightGreen = Color(0xff07D68B);
+  static const Color ultraLightGray = Color(0xffE5E5E5);
+
+  static const Color red = Color(0xffF6460D);
 
   // Gradients
   static const LinearGradient gradientBlue = LinearGradient(
