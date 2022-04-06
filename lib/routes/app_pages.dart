@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:kkary_vendors/modules/mart_vendor/views/order_details_page.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/mart_order_status.dart';
 import 'package:kkary_vendors/modules/mart_vendor/binding/mart_all_product_binding.dart';
 import 'package:kkary_vendors/modules/mart_vendor/binding/mart_bottom_navigation-binding.dart';
 import 'package:kkary_vendors/modules/mart_vendor/binding/mart_home_binding.dart';
@@ -90,7 +90,7 @@ class AppPages {
     //Mart
     GetPage(
       name: AppRoutes.orderDetails,
-      page: () => const OrderDetailsPage(),
+      page: () => const MartOrderStatus(),
     ),
     GetPage(
       name: AppRoutes.homeMart,
