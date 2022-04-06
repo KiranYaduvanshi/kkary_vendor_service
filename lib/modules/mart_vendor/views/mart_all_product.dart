@@ -4,7 +4,7 @@ import 'package:kkary_vendors/utils/app_strings.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class AllProductscreen extends StatelessWidget {
+class MartAllProductscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
