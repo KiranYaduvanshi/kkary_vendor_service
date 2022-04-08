@@ -5,6 +5,8 @@ import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class MartAllProductscreen extends StatelessWidget {
+  const MartAllProductscreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +16,7 @@ class MartAllProductscreen extends StatelessWidget {
         leading: const BackButton(
           color: Colors.white,
         ),
-        title: "All Products".text.size(18).make(),
+        title: "Orders".text.size(18).make(),
         centerTitle: true,
         actions: [
           const Icon(Icons.notifications_outlined).px(10),
@@ -62,7 +64,7 @@ class MartAllProductscreen extends StatelessWidget {
             data,
             height: 20,
           ).p2(),
-          text.text.bold.size(12).color(Colors.white).make(),
+          text.text.bold.size(10).color(Colors.white).make(),
         ],
       ).p(6),
     );
@@ -72,14 +74,21 @@ class MartAllProductscreen extends StatelessWidget {
 
   Widget productListWidget(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 9,
+      width: MediaQuery.of(context).size.width * .9,
       height: MediaQuery.of(context).size.height * .24,
       decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: const BorderRadius.all(
             Radius.circular(8),
           ),
-          boxShadow: [BoxShadow(color: Colors.grey.shade300, blurRadius: 2)]),
+          boxShadow: [
+            BoxShadow(color: Colors.grey.shade300, blurRadius: 2),
+            BoxShadow(
+                color: Colors.grey.shade300,
+                blurRadius: 2,
+                offset: const Offset(1, 1)),
+            BoxShadow(color: Colors.grey.shade300, blurRadius: 2)
+          ]),
       child: Row(
         children: [
           Container(
@@ -90,11 +99,13 @@ class MartAllProductscreen extends StatelessWidget {
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8),
                     bottomLeft: Radius.circular(8))),
-            child: Center(child: "#1".text.size(12).make()),
+            child: Center(child: "#1".text.size(10).make()),
           ),
           Container(
             //color: Colors.amber,
-            width: MediaQuery.of(context).size.width * .872,
+            constraints: BoxConstraints(
+                minWidth: MediaQuery.of(context).size.width * 0.8,
+                maxWidth: MediaQuery.of(context).size.width * 0.872),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               //crossAxisAlignment: CrossAxisAlignment.center,
@@ -105,7 +116,7 @@ class MartAllProductscreen extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        AppStrings.productImg.text.size(12).semiBold.make(),
+                        AppStrings.productImg.text.size(10).semiBold.make(),
                         Image.asset(
                           ImagePaths.google,
                           height: 30,
@@ -115,7 +126,7 @@ class MartAllProductscreen extends StatelessWidget {
                     // .px(6),
                     Column(
                       children: [
-                        AppStrings.productName.text.size(12).semiBold.make(),
+                        AppStrings.productName.text.size(10).semiBold.make(),
                         "Dolo  -65".text.make().py(3),
                         Container(
                           width: 60,
@@ -127,13 +138,13 @@ class MartAllProductscreen extends StatelessWidget {
                           ),
                           child: Center(
                               child:
-                                  "veg".text.size(12).white.make().px(2).py(2)),
+                                  "veg".text.size(10).white.make().px(2).py(2)),
                         )
                       ],
                     ),
                     Column(
                       children: [
-                        AppStrings.productPrice.text.size(12).semiBold.make(),
+                        AppStrings.productPrice.text.size(10).semiBold.make(),
                         "\$20".text.make().py(4)
                       ],
                     ),
@@ -152,28 +163,28 @@ class MartAllProductscreen extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        AppStrings.sellingPrice.text.size(12).semiBold.make(),
+                        AppStrings.sellingPrice.text.size(10).semiBold.make(),
                         "\$32".text.make().py(3)
                       ],
                     ),
                     Column(
                       children: [
-                        AppStrings.productQty.text.size(12).semiBold.make(),
+                        AppStrings.productQty.text.size(10).semiBold.make(),
                         "2".text.make().py(3)
                       ],
                     ),
                     Column(
                       children: [
-                        AppStrings.status.text.size(12).semiBold.make(),
+                        AppStrings.status.text.size(10).semiBold.make(),
                         Container(
-                          width: 70,
+                          width: 65,
                           decoration: BoxDecoration(
                             color: AppColors.green,
                             borderRadius: BorderRadius.circular(6),
                           ),
                           child: Center(
                                   child:
-                                      "Active".text.size(12).white.make().px(6))
+                                      "Active".text.size(10).white.make().px(6))
                               .py(3),
                         ).py(3)
                       ],

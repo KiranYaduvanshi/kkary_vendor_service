@@ -1,4 +1,20 @@
 class ListData {
+  static List<String> location = [
+    "How Many Years of Experience You Have? qawertyhjikhbcx",
+    "What is your age?rdtfyuihugchjv",
+    "How much Your Salary right now? rdtfguhijok",
+    "Are You Trained from any Academyesrdtfghuijokpl[;] ?"
+  ];
+
+  static List<String> city = [
+    "Chandighar",
+    "Panchkula",
+    "Sangrur",
+    "Sunam",
+    "Firozpur",
+    "Nangal"
+  ];
+
   static List<String> titles = [
     "How Many Years of Experience You Have?",
     "What is your age?",

@@ -2,6 +2,7 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/loginController.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
@@ -10,8 +11,8 @@ import 'package:kkary_vendors/utils/inpuFieldDecoration.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class LoginScreen extends StatelessWidget {
-  FocusNode mobileFn = FocusNode();
-  FocusNode passFn = FocusNode();
+  LoginController controller = Get.find();
+  int nextRoute = Get.arguments;
 
   LoginScreen({Key? key}) : super(key: key);
 
@@ -53,7 +54,8 @@ class LoginScreen extends StatelessWidget {
                         .make()),
               ).wFourFifth(context).py(8),
               TextFormField(
-                focusNode: mobileFn,
+                controller: controller.phoneEmailController,
+                focusNode: controller.mobileFn,
                 inputFormatters: [
                   FilteringTextInputFormatter.allow(RegExp('[0-9]')),
                 ],
@@ -61,22 +63,49 @@ class LoginScreen extends StatelessWidget {
                 validator: (value) {},
                 textInputAction: TextInputAction.next,
                 onFieldSubmitted: (String value) {
-                  FocusScope.of(context).requestFocus(passFn);
+                  FocusScope.of(context).requestFocus(controller.passFn);
                 },
                 decoration: CustomeInputDecoration.formDecoration(
-                    "eg - 9855548154 ", "Phone*"),
+                    "eg - 9855*****4 ", "Phone*"),
               ).wFourFifth(context).py8(),
-              TextFormField(
-                focusNode: passFn,
-                inputFormatters: [FilteringTextInputFormatter.deny(' ')],
-                obscureText: true,
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (value) {},
-                textInputAction: TextInputAction.done,
-                onFieldSubmitted: (String value) {},
-                decoration: CustomeInputDecoration.formDecoration(
-                    "**********", "Password"),
-              ).wFourFifth(context).py8(),
+              Obx(
+                () => TextFormField(
+                  controller: controller.passwordController,
+                  focusNode: controller.passFn,
+                  inputFormatters: [FilteringTextInputFormatter.deny(' ')],
+                  obscureText: controller.eye.value,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  validator: (value) {},
+                  textInputAction: TextInputAction.done,
+                  onFieldSubmitted: (String value) {},
+                  decoration: InputDecoration(
+                    suffixIcon: controller.eyeVisibility().onTap(() {
+                      controller.eye.value = !controller.eye.value;
+                    }),
+                    fillColor: Colors.white,
+                    filled: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    contentPadding:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
+                    disabledBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(color: Colors.white, width: 1),
+                      borderRadius: BorderRadius.circular(50.0),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      borderSide:
+                          const BorderSide(color: Colors.white, width: 1),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50.0),
+                      borderSide: const BorderSide(color: Colors.black),
+                    ),
+                    hintText: "**********",
+                    labelText: "Password",
+                  ),
+                ).wFourFifth(context).py8(),
+              ),
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -87,7 +116,9 @@ class LoginScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(25),
                       )),
                   onPressed: () {
-                    Get.toNamed(AppRoutes.orders);
+                    nextRoute == 1
+                        ? Get.toNamed(AppRoutes.bottomNavigationMart)
+                        : Get.toNamed(AppRoutes.partner);
                   },
                   child: AppStrings.login.text.lg
                       .color(AppColors.white)

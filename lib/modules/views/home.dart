@@ -17,23 +17,23 @@ class HomePage extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-            const SizedBox(
-            height: 40,
-          ),
-          Image.asset(
-            ImagePaths.logo,
-            height: 80,
-          ),
-          Center(
-            child: "Vendors App"
-                .text
-                .bold
-                .white
-                .size(20)
-                .align(TextAlign.center)
-                .make()
-                .py(8),
-          ),
+              const SizedBox(
+                height: 40,
+              ),
+              Image.asset(
+                ImagePaths.logo,
+                height: 80,
+              ),
+              Center(
+                child: "Vendors App"
+                    .text
+                    .bold
+                    .white
+                    .size(20)
+                    .align(TextAlign.center)
+                    .make()
+                    .py(8),
+              ),
               const SizedBox(
                 height: 15,
               ),
@@ -54,21 +54,26 @@ class HomePage extends StatelessWidget {
                       CommonWidgets().commonButton(
                           ctx: context,
                           action: () {
-                            Get.toNamed(AppRoutes.login);
+                            Get.toNamed(AppRoutes.login, arguments: 1);
                           },
-                          title: "Log In",
+                          title: "Log in to Vendor",
                           bgColor: AppColors.blueLight,
-                          strokeColor: Colors.grey),
-                      const SizedBox(
-                        height: 10,
-                      ),
+                          strokeColor: AppColors.blueLight),
+                      "Or"
+                          .text
+                          .size(20)
+                          .semiBold
+                          .color(AppColors.blueLight)
+                          .make()
+                          .py(8),
                       CommonWidgets().commonButton(
-                          action: () => Get.toNamed(AppRoutes.signUP),
+                          action: () =>
+                              Get.toNamed(AppRoutes.login, arguments: 2),
                           ctx: context,
                           strokeColor: AppColors.black,
                           textColor: AppColors.black,
                           bgColor: AppColors.white,
-                          title: "New to Kkary? Sign up!"),
+                          title: "Log in to service provider"),
                     ],
                   ),
                 ).py(10),

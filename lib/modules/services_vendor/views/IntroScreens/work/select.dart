@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/mart_your_work_controller.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/registerController.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/where_live_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/decorations.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -12,7 +14,8 @@ Widget radioGroup({
   required RxInt selectedVal,
   required Function select,
 }) {
-  Get.find<RegisterController>();
+  GetxController controller = Get.find<WorkClassController>();
+  GetxController whereLiveController = Get.find<WhereLiveController>();
 
   return Container(
     decoration: CustomeBoxDecorations.circularBorderLightBlue(),
@@ -38,8 +41,7 @@ Widget radioGroup({
                         groupValue: selectedVal.value,
                         onChanged: (int? value) {
                           selectedVal.value = value!;
-                          select();
-
+                          select(index);
                           print(
                               "index ----${selectedVal.value}  --- title--- ${radioList[index][i]}");
                         }),

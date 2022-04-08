@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/common_widgets/linear_progress_indicator.dart';
-import 'package:kkary_vendors/modules/services_vendor/controller/state_controller.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/mart_your_work_controller.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/work/select.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class WorkClass extends StatelessWidget {
-  var controller = Get.put(RadioController());
-  var radioContoller = Get.find<RadioController>();
+  // var controller = Get.put(RadioController());
+  WorkClassController _controller = Get.find();
+  // var radioContoller = Get.find<RadioController>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +31,14 @@ class WorkClass extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  for (int i = 0; i < radioContoller.title.length; i++)
+                  for (int i = 0; i < _controller.title.length; i++)
                     // WorkWidget().p(10),
                     radioGroup(
-                      radioList: radioContoller.radiodDataList,
-                      title: radioContoller.title[i],
-                      selectedVal: radioContoller.radioExperience,
+                      radioList: _controller.radiodDataList,
+                      title: _controller.title[i],
+                      selectedVal: _controller.radio[i],
                       index: i,
-                      select: radioContoller.onSelectRadioOption,
+                      select: _controller.onSelectRadioOption,
                     ).p(10)
                 ],
               ),
@@ -51,7 +52,9 @@ class WorkClass extends StatelessWidget {
                       topRight: Radius.circular(18)),
                   boxShadow: [BoxShadow(blurRadius: 3, color: Colors.grey)]),
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  _controller.continueButton();
+                },
                 child: "Continue".text.make().px(10).py(10),
                 style: ElevatedButton.styleFrom(
                   primary: AppColors.blueDark,

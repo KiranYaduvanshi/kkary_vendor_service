@@ -16,9 +16,9 @@ class AppRoutes {
   static const profile = '/profile';
 
   //Mart
-  static const orderDetails = '/orderDetails';
+  static const orderDetailsMart = '/orderDetails';
 
   static const homeMart = '/homeMart';
   static const bottomNavigationMart = '/bottomNavoigationMart';
-  static const allProducts = '/allProducts';
+  static const allProductsMart = '/allProducts';
 }

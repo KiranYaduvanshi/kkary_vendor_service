@@ -12,8 +12,10 @@ class CommonWidgets {
         decoration: InputDecoration(
           border: InputBorder.none,
           icon: AppIcons.searchIcon,
-          hintText: title,
-          hintStyle: const TextStyle(color: Colors.grey),
+          label: title.text
+              .color(Colors.grey)
+              .overflow(TextOverflow.ellipsis)
+              .make(),
         ),
       ).px20(),
     ).py8();

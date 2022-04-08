@@ -26,6 +26,14 @@ class AppColors {
   static const Color parrotgreen = Color(0xFF8EAB3B);
   static const Color green = Color(0xFF07D68B);
 
+  //Mart Home
+  static const Color purple = Color(0xffD28DD8);
+  static const Color orangeMid = Color(0xffF4A445);
+  static const Color blueMid = Color(0xff7CB4E8);
+  static const Color greenMid = Color(0xff9CD88D);
+  static const Color yellow = Color(0xffFCD138);
+  static const Color redMid = Color(0xffEE7777);
+
   // Gradients
   static const LinearGradient gradientBlue = LinearGradient(
     colors: [blueDark, blueLight],

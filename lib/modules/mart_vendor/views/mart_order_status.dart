@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/mart_vendor/controller/mart_order_status_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -9,12 +11,15 @@ class MartOrderStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MartOrderStatusController _controller = Get.find();
+
     const String classNametoLog = "Class: OrderDetailsPage";
     return Scaffold(
       backgroundColor: AppColors.ultraLightGray,
       appBar: AppBar(
+        backgroundColor: AppColors.blueLight,
         centerTitle: true,
-        title: "Pending Orders".text.make(),
+        title: _controller.pageTitle.text.make(),
         actions: [
           const Icon(
             Icons.notifications_none,
@@ -23,10 +28,8 @@ class MartOrderStatus extends StatelessWidget {
         ],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Placeholder(
-            fallbackHeight: 30,
-          ),
           Container(
             color: AppColors.white,
             child: Row(
@@ -60,30 +63,44 @@ class MartOrderStatus extends StatelessWidget {
               ],
             ).py(12),
           ),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                orderedItem(
-                    count: "1",
-                    ctx: context,
-                    orderID: "OD4771709634",
-                    productName: "Banana 12 Pcs",
-                    totalPrice: "12",
-                    whenOrdered: "1 Day Ago",
-                    orderStatus: "Pending",
-                    paymentMethod: "Online"),
-                orderedItem(
-                    count: "8",
-                    ctx: context,
-                    orderID: "OD4771709634",
-                    productName: "Banana 12 Pcs",
-                    totalPrice: "12",
-                    whenOrdered: "1 Day Ago",
-                    orderStatus: "Pending",
-                    paymentMethod: "COD"),
-              ],
-            ),
-          )
+          ListView.builder(
+            padding: const EdgeInsets.only(top: 5),
+            itemCount: 6,
+            itemBuilder: (BuildContext context, int index) => orderedItem(
+                count: "1",
+                ctx: context,
+                orderID: "OD4771709634",
+                productName: "Banana 12 Pcs",
+                totalPrice: "12",
+                whenOrdered: "1 Day Ago",
+                orderStatus: "Pending",
+                paymentMethod: "Online"),
+          ).expand(),
+          // SingleChildScrollView(
+          //   child: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.center,
+          //     children: [
+          //       orderedItem(
+          //           count: "1",
+          //           ctx: context,
+          //           orderID: "OD4771709634",
+          //           productName: "Banana 12 Pcs",
+          //           totalPrice: "12",
+          //           whenOrdered: "1 Day Ago",
+          //           orderStatus: "Pending",
+          //           paymentMethod: "Online"),
+          //       orderedItem(
+          //           count: "8",
+          //           ctx: context,
+          //           orderID: "OD4771709634",
+          //           productName: "Banana 12 Pcs",
+          //           totalPrice: "12",
+          //           whenOrdered: "1 Day Ago",
+          //           orderStatus: "Pending",
+          //           paymentMethod: "COD"),
+          //     ],
+          //   ).expand(),
+          // )
         ],
       ),
     );
@@ -103,14 +120,14 @@ class MartOrderStatus extends StatelessWidget {
       children: [
         Container(
           decoration: const BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                offset: Offset(0.5, -0.5), //(x,y)
-                blurRadius: 6.0,
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.grey,
+              //     offset: Offset(1, -1), //(x,y)
+              //     blurRadius: 3,
+              //   ),
+              // ],
               ),
-            ],
-          ),
           height: 130,
           child: Row(
             children: [
@@ -132,7 +149,7 @@ class MartOrderStatus extends StatelessWidget {
               Container(
                 height: 130,
                 color: Colors.white,
-                width: MediaQuery.of(ctx).size.width * .8,
+                width: MediaQuery.of(ctx).size.width * .82,
                 child: Column(
                   children: [
                     Container(
@@ -307,7 +324,7 @@ class MartOrderStatus extends StatelessWidget {
           ),
         ).py(4).px(6),
         Positioned(
-            right: MediaQuery.of(ctx).size.width * .035,
+            right: MediaQuery.of(ctx).size.width * .015,
             top: 63,
             child: "Action".text.size(9).make().rotate(270)),
       ],

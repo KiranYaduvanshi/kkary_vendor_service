@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kkary_vendors/modules/views/profile_screen.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -61,22 +60,18 @@ class EarningPage extends StatelessWidget {
               )
             ],
           ).py8().px(8),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                for (int i = 0; i < 10; i++)
-                  items(
-                    context: context,
-                    image: ImagePaths.imgUser,
-                    amount: "157",
-                    name: "Nitish Kumar",
-                    hashTag: "#5625",
-                    onTapAction: () {
-                      Get.to(const ProfileScreen());
-                    },
-                  )
-              ],
-            ),
+          ListView.builder(
+            itemCount: 15,
+            itemBuilder: (BuildContext context, int index) {
+              return items(
+                context: context,
+                image: ImagePaths.imgUser,
+                amount: "157",
+                name: "Nitish Kumar",
+                hashTag: "#5625#$index",
+                onTapAction: () {},
+              ).p(8);
+            },
           ).expand(),
         ],
       ),
@@ -94,7 +89,8 @@ class EarningPage extends StatelessWidget {
     return InkWell(
       onTap: () => onTapAction(),
       child: Card(
-        elevation: 2,
+        color: Colors.white,
+        elevation: 3,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
@@ -106,7 +102,7 @@ class EarningPage extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     backgroundColor: AppColors.blueLight,
-                    radius: 25,
+                    radius: 26,
                     child: CircleAvatar(
                       // foregroundImage: AssetImage(AppImages.profileImage),
                       foregroundImage: AssetImage(ImagePaths.imgUser),

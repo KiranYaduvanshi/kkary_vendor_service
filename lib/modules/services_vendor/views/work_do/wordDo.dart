@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/common_widgets/linear_progress_indicator.dart';
-import 'package:kkary_vendors/modules/services_vendor/controller/state_controller.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/partner_controller.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/work_do_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class WorkDoClass extends StatelessWidget {
-  var controller = Get.put(RadioController());
-  var radioContoller = Get.find<RadioController>();
+  WorkDoScreenController controller = Get.find();
+  PartnerController partnerController = Get.find();
 
-  int value1 = -1;
+  WorkDoClass({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,8 +46,8 @@ class WorkDoClass extends StatelessWidget {
           SingleChildScrollView(
             child: Column(
               children: [
-                for (int i = 0; i < radioContoller.workTitle.length; i++)
-                  WorkDowidget(i, radioContoller.workTitle[i]).p(5)
+                for (int i = 0; i < partnerController.workTitle.length; i++)
+                  WorkDowidget(i, partnerController.workTitle[i]).p(5)
               ],
             ),
           ).expand()
@@ -89,14 +90,10 @@ class WorkDoClass extends StatelessWidget {
           Obx(
             () => Radio(
                 value: index,
-                groupValue: radioContoller.radioworkDo.value,
+                groupValue: partnerController.radioworkDo.value,
                 onChanged: (int? value) {
-                  radioContoller.radioworkDo.value = value!;
-                  radioContoller.onSelectRadioOption(index);
-                  Get.back();
-                  print("value---- ${radioContoller.radioworkDo.value}");
-                  print(
-                      "value list item---- ${radioContoller.onSelectRadioOption}");
+                  partnerController.radioworkDo.value = value!;
+                  controller.onSelectRadioOption(index);
                 }),
           ),
         ],

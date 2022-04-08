@@ -20,4 +20,8 @@ class AppIcons {
     Icons.notifications_none_outlined,
     color: Colors.white,
   );
+
+  static Icon visibility = const Icon(Icons.visibility, color: Colors.grey);
+  static Icon visibilityOff =
+      const Icon(Icons.visibility_off, color: Colors.grey);
 }

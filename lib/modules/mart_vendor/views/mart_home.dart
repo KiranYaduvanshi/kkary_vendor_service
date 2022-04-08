@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -46,34 +44,38 @@ class MartHome extends StatelessWidget {
   Widget menu(BuildContext context, int index) {
     MartHomeController _controller = Get.find();
 
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.blueUltraLight,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Badge(
-            badgeColor: Colors
-                .primaries[Random().nextInt(Colors.primaries.length)].shade200,
-            padding: const EdgeInsets.all(3),
-            position: BadgePosition.topEnd(top: 4, end: -8),
-            badgeContent: const Icon(
-              Icons.arrow_upward,
-              color: Colors.white,
-              size: 13,
-            ),
-            child: Container(
-              decoration: BoxDecoration(
+    return InkWell(
+      onTap: () {
+        _controller.goToPage(_controller.list[index]);
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors.blueUltraLight,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Badge(
+              badgeColor: _controller.color[index],
+              padding: const EdgeInsets.all(3),
+              position: BadgePosition.topEnd(top: 4, end: -8),
+              badgeContent: const Icon(
+                Icons.arrow_upward,
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(100),
+                size: 13,
               ),
-              child: "10".text.size(34).make().p12(),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                child: "10".text.size(32).make().p12(),
+              ),
             ),
-          ),
-          "Total ${_controller.list[index]}".text.bold.size(14).make(),
-        ],
+            "Total ${_controller.list[index]}".text.semiBold.size(12).make(),
+          ],
+        ),
       ),
     );
   }

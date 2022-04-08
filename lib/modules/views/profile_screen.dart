@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:kkary_vendors/modules/views/earning_page.dart';
-import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -30,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     backgroundColor: AppColors.blueLight,
-                    radius: 29,
+                    radius: 30,
                     child: CircleAvatar(
                       // foregroundImage: AssetImage(AppImages.profileImage),
                       foregroundImage: AssetImage(ImagePaths.imgUser),
@@ -71,7 +68,6 @@ class ProfileScreen extends StatelessWidget {
           ),
           const Divider(
             thickness: 0.5,
-            color: AppColors.grayDark,
           ),
           Row(
             children: [
@@ -87,7 +83,6 @@ class ProfileScreen extends StatelessWidget {
           ).px(26).py(5),
           const Divider(
             thickness: 0.5,
-            color: AppColors.grayDark,
           ),
           Row(
             children: [
@@ -100,7 +95,6 @@ class ProfileScreen extends StatelessWidget {
           ).px(26).py(5),
           const Divider(
             thickness: 0.5,
-            color: AppColors.grayDark,
           ),
           Row(
             children: [
@@ -113,7 +107,6 @@ class ProfileScreen extends StatelessWidget {
           ).px(26).py(5),
           const Divider(
             thickness: 0.5,
-            color: AppColors.grayDark,
           ),
           Row(
             children: [
