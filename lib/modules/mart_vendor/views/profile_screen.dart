@@ -67,13 +67,14 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
           const Divider(
-            thickness: 0.5,
+            thickness: 1,
           ),
           Row(
             children: [
               Image.asset(
                 ImagePaths.myOrders,
                 color: AppColors.blueLight,
+                width: 20,
               ),
               const SizedBox(
                 width: 20,
@@ -82,11 +83,14 @@ class ProfileScreen extends StatelessWidget {
             ],
           ).px(26).py(5),
           const Divider(
-            thickness: 0.5,
+            thickness: 1,
           ),
           Row(
             children: [
-              Image.asset(ImagePaths.myDetails),
+              Image.asset(
+                ImagePaths.myDetails,
+                width: 20,
+              ),
               const SizedBox(
                 width: 20,
               ),
@@ -94,11 +98,14 @@ class ProfileScreen extends StatelessWidget {
             ],
           ).px(26).py(5),
           const Divider(
-            thickness: 0.5,
+            thickness: 1,
           ),
           Row(
             children: [
-              Image.asset(ImagePaths.notifications),
+              Image.asset(
+                ImagePaths.notifications,
+                width: 20,
+              ),
               const SizedBox(
                 width: 20,
               ),
@@ -106,11 +113,14 @@ class ProfileScreen extends StatelessWidget {
             ],
           ).px(26).py(5),
           const Divider(
-            thickness: 0.5,
+            thickness: 1,
           ),
           Row(
             children: [
-              Image.asset(ImagePaths.logout),
+              Image.asset(
+                ImagePaths.logout,
+                width: 20,
+              ),
               const SizedBox(
                 width: 20,
               ),

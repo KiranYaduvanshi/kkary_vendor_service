@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/common_widgets/continue_button.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/order_ctl.dart';
-import 'package:kkary_vendors/modules/views/earning_page.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/earning_page.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_icons.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';

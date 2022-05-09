@@ -14,6 +14,7 @@ class AppRoutes {
   static const home = '/homePage';
   static const earnings = '/earnings';
   static const profile = '/profile';
+  static const serviceStatus = '/status';
 
   //Mart
   static const orderDetailsMart = '/orderDetails';
@@ -21,4 +22,5 @@ class AppRoutes {
   static const homeMart = '/homeMart';
   static const bottomNavigationMart = '/bottomNavoigationMart';
   static const allProductsMart = '/allProducts';
+  static const test = '/test';
 }

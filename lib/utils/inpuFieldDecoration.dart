@@ -13,11 +13,11 @@ class CustomeInputDecoration {
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(50.0),
-        borderSide: const BorderSide(color: Colors.white, width: 1),
+        borderSide: BorderSide.none,
       ),
       errorBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(50.0),
-        borderSide: const BorderSide(color: Colors.black),
+        borderSide: BorderSide.none,
       ),
       hintText: hint,
       labelText: lable,

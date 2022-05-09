@@ -17,7 +17,7 @@ class AppIcons {
     color: Colors.black,
   );
   static const Icon notification = Icon(
-    Icons.notifications_none_outlined,
+    Icons.notifications_none_sharp,
     color: Colors.white,
   );
 

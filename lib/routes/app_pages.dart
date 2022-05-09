@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/mart_vendor/binding/mart_order_status_binding.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/test.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/loginBinding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/mart_your_work.dart';
 import 'package:kkary_vendors/modules/mart_vendor/views/mart_order_status.dart';
@@ -12,6 +13,7 @@ import 'package:kkary_vendors/modules/services_vendor/binding/homeBinding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/hours_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/order_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/partnet_binding.dart';
+import 'package:kkary_vendors/modules/services_vendor/binding/service_status-binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/loginController.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/loginScreen.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/partner.dart';
@@ -22,11 +24,12 @@ import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dar
 import 'package:kkary_vendors/modules/mart_vendor/views/mart_all_product.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/location/location.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/orders.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/service_status.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/work_do/wordDo.dart';
-import 'package:kkary_vendors/modules/views/earning_page.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/earning_page.dart';
 import 'package:kkary_vendors/modules/views/home.dart';
-import 'package:kkary_vendors/modules/views/profile_screen.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/profile_screen.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 
 class AppPages {
@@ -37,6 +40,10 @@ class AppPages {
       name: AppRoutes.partner,
       page: () => const Partner(),
       binding: PartnerBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.test,
+      page: () => const Test(),
     ),
     GetPage(
       name: AppRoutes.workDoRegister,
@@ -92,6 +99,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.profile,
       page: () => const ProfileScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.serviceStatus,
+      page: () => ServiceStatus(),
+      binding: ServiceStatusBinding(),
     ),
 
     //Mart

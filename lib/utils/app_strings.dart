@@ -10,7 +10,7 @@ class AppStrings {
   static const signUp = "Sign Up ";
   static const login = "Login ";
   static const nigerianCurrency = "₦";
-  static const donthaveAccount = "Don't have an Account ";
+  static const donthaveAccount = "Don't have an Account? ";
   static const facebook = "Continue With Facebook ";
   static const google = "Continue With Google ";
   static const forgotPassword = "Forgot Password? ";

@@ -23,29 +23,90 @@ class MartAllProductscreen extends StatelessWidget {
         ],
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            color: Colors.white,
+            color: AppColors.white,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                options(ImagePaths.google, "Copy", context).p(10),
+                customButton(
+                  imagePath: ImagePaths.icCopy,
+                  title: "Copy",
+                  onClick: () {
+                    print("Copy ");
+                  },
+                ).px(6),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    options(ImagePaths.google, "PDF", context),
-                    options(ImagePaths.google, "Print", context).px(6).py(10),
+                    customButton(
+                      imagePath: ImagePaths.icPdf,
+                      title: "PDF",
+                      onClick: () {
+                        print("PDF ");
+                      },
+                    ).px(6),
+                    customButton(
+                      imagePath: ImagePaths.icPrint,
+                      title: "Print",
+                      onClick: () {
+                        print("print ");
+                      },
+                    ).px(6)
                   ],
-                ),
+                )
               ],
-            ),
+            ).py(12),
           ),
+          // Container(
+          //   color: Colors.white,
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: [
+          //       options(ImagePaths.google, "Copy", context).p(10),
+          //       Row(
+          //         mainAxisAlignment: MainAxisAlignment.end,
+          //         children: [
+          //           options(ImagePaths.google, "PDF", context),
+          //           options(ImagePaths.google, "Print", context).px(6).py(10),
+          //         ],
+          //       ),
+          //     ],
+          //   ),
+          // ),
           ListView.builder(
               itemCount: 4,
               itemBuilder: (BuildContext context, int index) {
                 return productListWidget(context);
               }).expand()
         ],
+      ),
+    );
+  }
+
+  Widget customButton(
+      {required String imagePath,
+      required String title,
+      required Function onClick}) {
+    return InkWell(
+      onTap: () {
+        onClick();
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: AppColors.red,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(imagePath).px(8),
+            title.text.white.make().px(4),
+            const SizedBox(
+              width: 10,
+            ),
+          ],
+        ).py(4),
       ),
     );
   }
@@ -196,6 +257,6 @@ class MartAllProductscreen extends StatelessWidget {
           )
         ],
       ),
-    ).p(10);
+    ).p(5);
   }
 }

@@ -12,7 +12,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginController controller = Get.find();
-  int nextRoute = Get.arguments;
+  List<String> nextRoute = Get.arguments;
 
   LoginScreen({Key? key}) : super(key: key);
 
@@ -33,11 +33,11 @@ class LoginScreen extends StatelessWidget {
                 height: 80,
               ),
               Center(
-                child: "Vendors App"
+                child: nextRoute[1]
                     .text
                     .bold
                     .white
-                    .size(20)
+                    .size(25)
                     .align(TextAlign.center)
                     .make()
                     .py(8),
@@ -53,61 +53,69 @@ class LoginScreen extends StatelessWidget {
                         .size(14)
                         .make()),
               ).wFourFifth(context).py(8),
-              TextFormField(
-                controller: controller.phoneEmailController,
-                focusNode: controller.mobileFn,
-                inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp('[0-9]')),
-                ],
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                validator: (value) {},
-                textInputAction: TextInputAction.next,
-                onFieldSubmitted: (String value) {
-                  FocusScope.of(context).requestFocus(controller.passFn);
-                },
-                decoration: CustomeInputDecoration.formDecoration(
-                    "eg - 9855*****4 ", "Phone*"),
-              ).wFourFifth(context).py8(),
-              Obx(
-                () => TextFormField(
-                  controller: controller.passwordController,
-                  focusNode: controller.passFn,
-                  inputFormatters: [FilteringTextInputFormatter.deny(' ')],
-                  obscureText: controller.eye.value,
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .8,
+                height: 60,
+                child: TextFormField(
+                  controller: controller.phoneEmailController,
+                  focusNode: controller.mobileFn,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp('[0-9]')),
+                  ],
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                   validator: (value) {},
-                  textInputAction: TextInputAction.done,
-                  onFieldSubmitted: (String value) {},
-                  decoration: InputDecoration(
-                    suffixIcon: controller.eyeVisibility().onTap(() {
-                      controller.eye.value = !controller.eye.value;
-                    }),
-                    fillColor: Colors.white,
-                    filled: true,
-                    floatingLabelBehavior: FloatingLabelBehavior.never,
-                    contentPadding:
-                        const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
-                    disabledBorder: OutlineInputBorder(
-                      borderSide:
-                          const BorderSide(color: Colors.white, width: 1),
-                      borderRadius: BorderRadius.circular(50.0),
+                  textInputAction: TextInputAction.next,
+                  onFieldSubmitted: (String value) {
+                    FocusScope.of(context).requestFocus(controller.passFn);
+                  },
+                  decoration: CustomeInputDecoration.formDecoration(
+                      "eg - 9855*****4 ", "Email/Mobile"),
+                ).py8(),
+              ),
+              Obx(
+                () => SizedBox(
+                  width: MediaQuery.of(context).size.width * .8,
+                  height: 45,
+                  child: TextFormField(
+                    controller: controller.passwordController,
+                    focusNode: controller.passFn,
+                    inputFormatters: [FilteringTextInputFormatter.deny(' ')],
+                    obscureText: controller.eye.value,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    validator: (value) {},
+                    textInputAction: TextInputAction.done,
+                    onFieldSubmitted: (String value) {},
+                    decoration: InputDecoration(
+                      suffixIcon: controller.eyeVisibility().onTap(() {
+                        controller.eye.value = !controller.eye.value;
+                      }),
+                      isDense: true,
+                      fillColor: Colors.white,
+                      filled: true,
+                      floatingLabelBehavior: FloatingLabelBehavior.never,
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 0, horizontal: 20),
+                      disabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      hintText: "**********",
+                      labelText: "Password",
                     ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                      borderSide:
-                          const BorderSide(color: Colors.white, width: 1),
-                    ),
-                    errorBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                      borderSide: const BorderSide(color: Colors.black),
-                    ),
-                    hintText: "**********",
-                    labelText: "Password",
                   ),
-                ).wFourFifth(context).py8(),
+                ).py8(),
               ),
               SizedBox(
-                width: double.infinity,
+                width: MediaQuery.of(context).size.width * .8,
+                height: 40,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                       primary: AppColors.orange,
@@ -116,17 +124,16 @@ class LoginScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(25),
                       )),
                   onPressed: () {
-                    nextRoute == 1
+                    nextRoute[0] == "1"
                         ? Get.toNamed(AppRoutes.bottomNavigationMart)
                         : Get.toNamed(AppRoutes.partner);
                   },
                   child: AppStrings.login.text.lg
                       .color(AppColors.white)
                       .bold
-                      .make()
-                      .py12(),
+                      .make(),
                 ),
-              ).wFourFifth(context).py8(),
+              ).py8(),
               Align(
                       alignment: Alignment.bottomRight,
                       child: AppStrings.forgotPassword.text.white
@@ -164,68 +171,85 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ],
               ).wFourFifth(context).py(8),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: AppColors.white,
-                    elevation: 5,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    )),
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      Icons.facebook,
-                      size: 30,
-                      color: AppColors.blueLight,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    AppStrings.facebook.text.size(16).black.make().p12(),
-                  ],
-                ).wThreeForth(context),
-              ).py(10),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: AppColors.white,
-                    elevation: 5,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    )),
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      ImagePaths.google,
-                      width: 25,
-                      height: 25,
-                      fit: BoxFit.fill,
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    AppStrings.google.text.size(16).black.make().p12(),
-                  ],
-                ).wThreeForth(context),
-              ).py(10),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .8,
+                height: 60,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: AppColors.white,
+                      elevation: 5,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      )),
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.facebook,
+                        size: 30,
+                        color: AppColors.blueLight,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      SizedBox(
+                              width: 160,
+                              child: AppStrings.facebook.text
+                                  .size(16)
+                                  .black
+                                  .make())
+                          .p12(),
+                    ],
+                  ),
+                ).py(10),
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * .8,
+                height: 60,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: AppColors.white,
+                      elevation: 5,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      )),
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        ImagePaths.google,
+                        width: 25,
+                        height: 25,
+                        fit: BoxFit.fill,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      SizedBox(
+                              width: 160,
+                              child:
+                                  AppStrings.google.text.size(16).black.make())
+                          .p12(),
+                    ],
+                  ),
+                ).py(10),
+              ),
               InkWell(
                 onTap: () {
                   Get.toNamed(AppRoutes.signUP);
                 },
                 child: RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                     text: AppStrings.donthaveAccount,
                     style: TextStyle(fontSize: 13, color: Colors.white),
                     children: <TextSpan>[
                       TextSpan(
                           text: ' ${AppStrings.signUp}',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
                               fontSize: 15,
-                              color: Colors.white)),
+                              color: Colors.white.withOpacity(0.8))),
                     ],
                   ),
                 ).py(10),

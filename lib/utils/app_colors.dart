@@ -10,6 +10,8 @@ class AppColors {
   static const Color blueDark = Color(0xFF247BB1);
   static const Color blueMedium = Color(0xFF2FB4FF);
   static const Color blueExtraDark = Color(0xFF18223B);
+  static const Color blueNavy = Color(0xFF007DF0);
+  static const Color blueNavyLight = Color(0xFFE4EBFD);
 
   static const Color gray = Color(0xFFF5F5F5);
   static const Color lightgray = Color(0xFFF5F5F6);
@@ -24,7 +26,14 @@ class AppColors {
 
   static const Color red = Color(0xffF6460D);
   static const Color parrotgreen = Color(0xFF8EAB3B);
+  static const Color gold = Color(0xFFFFAA29);
+
+  //Green
   static const Color green = Color(0xFF07D68B);
+  static const Color greenDark = Color(0xFF40AD5C);
+  static const Color greenLight = Color(0xFFE0F2E4);
+
+
 
   //Mart Home
   static const Color purple = Color(0xffD28DD8);

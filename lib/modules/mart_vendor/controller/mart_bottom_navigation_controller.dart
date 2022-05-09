@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/mart_vendor/views/mart_home.dart';
-import 'package:kkary_vendors/modules/views/earning_page.dart';
-import 'package:kkary_vendors/modules/views/profile_screen.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/earning_page.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/profile_screen.dart';
 
 class MartBottomNavigationController extends GetxController {
   DateTime? currentBackPressTime;
@@ -21,7 +21,7 @@ class MartBottomNavigationController extends GetxController {
         now.difference(currentBackPressTime!) > const Duration(seconds: 2)) {
       currentBackPressTime = now;
       Get.snackbar(
-        "GeeksforGeeks",
+        "",
         "Please Press Again To Exit App",
         icon: const Icon(Icons.person, color: Colors.white),
         snackPosition: SnackPosition.BOTTOM,

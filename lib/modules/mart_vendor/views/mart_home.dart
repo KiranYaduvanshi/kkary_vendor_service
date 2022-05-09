@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/mart_vendor/controller/mart_home_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
+import 'package:kkary_vendors/utils/app_icons.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class MartHome extends StatelessWidget {
@@ -13,6 +14,7 @@ class MartHome extends StatelessWidget {
     MartHomeController _controller = Get.find();
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         centerTitle: true,
@@ -22,7 +24,7 @@ class MartHome extends StatelessWidget {
         actions: const [
           Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Icon(Icons.notifications_outlined)),
+              child: AppIcons.notification),
         ],
       ),
       body: Padding(
@@ -73,7 +75,7 @@ class MartHome extends StatelessWidget {
                 child: "10".text.size(32).make().p12(),
               ),
             ),
-            "Total ${_controller.list[index]}".text.semiBold.size(12).make(),
+            "Total ${_controller.list[index]}".text.bold.size(12).make(),
           ],
         ),
       ),

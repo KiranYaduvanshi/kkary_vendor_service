@@ -18,4 +18,5 @@ class ImagePaths {
   static const String icPrint = "assets/images/ic_print.png";
   static const String money = "assets/images/ic_money.png";
   static const String circulerPerson = "assets/images/ic_circuler_user.png";
+  static const String icnotification = "assets/images/ic_notification.png";
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/mart_vendor/controller/mart_order_status_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
+import 'package:kkary_vendors/utils/app_icons.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
@@ -21,10 +22,7 @@ class MartOrderStatus extends StatelessWidget {
         centerTitle: true,
         title: _controller.pageTitle.text.make(),
         actions: [
-          const Icon(
-            Icons.notifications_none,
-            color: Colors.white,
-          ).px(15),
+          AppIcons.notification.px(15),
         ],
       ),
       body: Column(

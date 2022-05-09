@@ -14,7 +14,7 @@ class EarningPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        title: "Earning".text.make(),
+        title: "Earnings".text.make(),
         centerTitle: true,
         backgroundColor: AppColors.blueLight,
         // leading: const Icon(Icons.arrow_back),
@@ -27,9 +27,10 @@ class EarningPage extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  "Today's Earning  ".text.semiBold.black.make(),
+                  "Today's Earning  ".text.size(17).semiBold.black.make(),
                   "Rs $totalEarning"
                       .text
+                      .size(16)
                       .semiBold
                       .color(AppColors.blueLight)
                       .make(),
@@ -54,7 +55,7 @@ class EarningPage extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    "January".text.size(15).black.make(),
+                    "January".text.size(15).color(AppColors.blueLight).make(),
                   ],
                 ).px(6).py(2),
               )

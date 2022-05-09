@@ -11,6 +11,7 @@ class MartBottomNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     MartBottomNavigationController _controller = Get.find();
     return Scaffold(
+      backgroundColor: Colors.white,
       body: WillPopScope(
         onWillPop: _controller.onWillPop,
         child: Obx(

@@ -11,11 +11,13 @@ class CustomeBoxDecorations {
   }
 
   static BoxDecoration circularInputField(
-      {Color borderColor = Colors.black, Color? backColor}) {
+      {Color borderColor = Colors.black,
+      Color backColor = Colors.white,
+      double border = 25}) {
     return BoxDecoration(
-      color: Colors.white,
+      color: backColor,
       border: Border.all(color: borderColor),
-      borderRadius: const BorderRadius.all(Radius.circular(25)),
+      borderRadius: BorderRadius.all(Radius.circular(border)),
     );
   }
 
