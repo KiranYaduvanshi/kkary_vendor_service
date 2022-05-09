@@ -236,7 +236,7 @@ class SignUpClass extends StatelessWidget {
                               )
                             ],
                           ).py(8),
-                        ).py(10),
+                        ).py(10).expand()
                       ],
                     ),
                   ).p32(),

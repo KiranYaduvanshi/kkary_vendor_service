@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "573894430343",
+    "project_id": "kkary-vendors",
+    "storage_bucket": "kkary-vendors.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:573894430343:android:43a14aa6abbf433a04f222",
+        "android_client_info": {
+          "package_name": "com.example.kkary_vendors"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "573894430343-arvtgsrfcpjd3uq39rcdcr7i1igkpcr8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_oUMff6GmuuXjUN1O-5Vmfv6DUlyV9Bw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "573894430343-arvtgsrfcpjd3uq39rcdcr7i1igkpcr8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

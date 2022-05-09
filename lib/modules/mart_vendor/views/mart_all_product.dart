@@ -14,7 +14,7 @@ class MartAllProductscreen extends StatelessWidget {
         leading: const BackButton(
           color: Colors.white,
         ),
-        title: "All Products".text.size(18).make(),
+        title: AppStrings.allProducts.text.size(18).make(),
         centerTitle: true,
         actions: [
           const Icon(Icons.notifications_outlined).px(10),

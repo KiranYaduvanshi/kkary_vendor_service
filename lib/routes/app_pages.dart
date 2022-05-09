@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/mart_vendor/binding/mart_addProduct_binding.dart';
+import 'package:kkary_vendors/modules/mart_vendor/views/mart_add_product.dart';
 import 'package:kkary_vendors/modules/mart_vendor/views/mart_order_status.dart';
 import 'package:kkary_vendors/modules/mart_vendor/binding/mart_all_product_binding.dart';
 import 'package:kkary_vendors/modules/mart_vendor/binding/mart_bottom_navigation-binding.dart';
@@ -8,6 +10,7 @@ import 'package:kkary_vendors/modules/mart_vendor/views/mart_home.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/homeBinding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/hours_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/order_binding.dart';
+import 'package:kkary_vendors/modules/services_vendor/binding/product_detail_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/loginScreen.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/partner.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/IntroScreens/Register/sign_up.dart';
@@ -17,15 +20,17 @@ import 'package:kkary_vendors/modules/services_vendor/views/Register/work_do.dar
 import 'package:kkary_vendors/modules/mart_vendor/views/mart_all_product.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/location/location.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/orders.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/product_detail.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/work_do/wordDo.dart';
 import 'package:kkary_vendors/modules/views/earning_page.dart';
 import 'package:kkary_vendors/modules/views/home.dart';
 import 'package:kkary_vendors/modules/views/profile_screen.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
+import 'package:kkary_vendors/routes/ui_demo.dart';
 
 class AppPages {
-  static const homeRoute = AppRoutes.orderDetails;
+  static const homeRoute = AppRoutes.uiDemo;
 
   static final routes = [
     GetPage(
@@ -106,6 +111,22 @@ class AppPages {
       name: AppRoutes.allProducts,
       page: () => MartAllProductscreen(),
       binding: MartAllProductBinding(),
+    ),
+
+    GetPage(
+      name: AppRoutes.martAddProduct,
+      page: () => MartAddProduct(),
+      binding: MartAddProdcutBinding(),
+    ),
+
+    GetPage(
+      name: AppRoutes.productDetails,
+      page: () => ProductDetailScreen(),
+      binding: ProductDetailBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.uiDemo,
+      page: () => DemoUi(),
     ),
   ];
 }
