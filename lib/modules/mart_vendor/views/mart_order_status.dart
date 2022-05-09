@@ -16,7 +16,7 @@ class MartOrderStatus extends StatelessWidget {
 
     const String classNametoLog = "Class: OrderDetailsPage";
     return Scaffold(
-      backgroundColor: AppColors.ultraLightGray,
+      backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.blueLight,
         centerTitle: true,
@@ -131,7 +131,7 @@ class MartOrderStatus extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.center,
-                height: 130,
+                height: 150,
                 width: MediaQuery.of(ctx).size.width * .07,
                 decoration: const BoxDecoration(
                   color: AppColors.grayDark,
@@ -145,7 +145,7 @@ class MartOrderStatus extends StatelessWidget {
                 child: "#$count ".text.make(),
               ),
               Container(
-                height: 130,
+                height: 150,
                 color: Colors.white,
                 width: MediaQuery.of(ctx).size.width * .82,
                 child: Column(
@@ -222,7 +222,7 @@ class MartOrderStatus extends StatelessWidget {
                       height: 1.6,
                     ),
                     Container(
-                      height: 64.2,
+                      height: 68.2,
                       color: AppColors.white,
                       child: Row(
                         children: [
@@ -237,7 +237,7 @@ class MartOrderStatus extends StatelessWidget {
                                     .size(11)
                                     .black
                                     .make()
-                                    .py12(),
+                                    .py8(),
                                 whenOrdered.text.semiBold
                                     .size(11)
                                     .color(AppColors.grayDark)
@@ -246,27 +246,29 @@ class MartOrderStatus extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            width: MediaQuery.of(ctx).size.width * .26566,
+                            width: MediaQuery.of(ctx).size.width * .27,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 "Payment Method"
                                     .text
                                     .semiBold
-                                    .size(11)
+                                    .size(8)
                                     .black
+                                    .maxLines(2)
                                     .make()
-                                    .py12(),
+                                    .py8(),
                                 Container(
+                                  height: 20,
                                   decoration: BoxDecoration(
                                     color: AppColors.blueLight,
                                     borderRadius: BorderRadius.circular(5),
                                   ),
                                   child: paymentMethod.text.white
-                                      .size(11)
+                                      .size(8)
                                       .make()
                                       .px(6)
-                                      .py(2),
+                                      .py2(),
                                 ),
                               ],
                             ),
@@ -282,8 +284,9 @@ class MartOrderStatus extends StatelessWidget {
                                     .size(11)
                                     .black
                                     .make()
-                                    .py12(),
+                                    .py8(),
                                 Container(
+                                  height: 20,
                                   decoration: BoxDecoration(
                                     color: AppColors.ultraLightGreen,
                                     borderRadius: BorderRadius.circular(5),
@@ -306,7 +309,7 @@ class MartOrderStatus extends StatelessWidget {
               ),
               Container(
                 alignment: Alignment.center,
-                height: 130,
+                height: 150,
                 width: MediaQuery.of(ctx).size.width * .07,
                 decoration: const BoxDecoration(
                   color: AppColors.blueLight,
@@ -320,7 +323,7 @@ class MartOrderStatus extends StatelessWidget {
               ),
             ],
           ),
-        ).py(4).px(6),
+        ).py(8).px(6),
         Positioned(
             right: MediaQuery.of(ctx).size.width * .015,
             top: 63,
