@@ -42,6 +42,7 @@ class AppStrings {
   static const String enterProDescription = "Enter Product Desciption ";
   static const String save = "Save ";
   static const String addProduct = "Add Product ";
+  static const String produtDetail = "Product Detail";
 
   static const String clickToUploadImg = "Click Here to Upload Image ";
 

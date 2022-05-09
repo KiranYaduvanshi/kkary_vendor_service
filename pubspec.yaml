@@ -35,6 +35,15 @@ dependencies:
   dotted_line: ^3.1.0 
   email_validator: ^2.0.1
   badges: ^2.0.2
+  firebase_core: ^1.12.0
+  firebase_messaging: ^11.2.6
+  overlay_support: ^1.2.1
+  flutter_local_notifications: ^9.2.0
+  firebase_messaging_platform_interface: ^3.1.6
+
+
+
+
 
 
 
