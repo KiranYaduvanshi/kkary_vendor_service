@@ -43,10 +43,34 @@ class AppStrings {
   static const String save = "Save ";
   static const String addProduct = "Add Product ";
   static const String produtDetail = "Product Detail";
+  static const String NGN = "₦";
+  static const String Er400 = "Bad Request : Error 400";
+  static const String Er401 = "Please logout and SignIn again";
+  static const String Er403 = "Forbidden : Error 403";
+  static const String Er500 = "Internal Server Error : Error 500";
+  static const String ErrDefault = "Something went wrong";
 
   static const String clickToUploadImg = "Click Here to Upload Image ";
 
   static const location =
       "Search For the preferred Work \n Location in Gurgaon ";
   static const orderServiceProvide = "Services will provide";
+  static const token = "token";
+  static const String USER_EMAil = " User Email.";
+  static const String LOGIN_STATUS = "login satus";
+  static const String PASSWORD = "User Password";
+  static const String IMAGE_PATH = "image path";
+  static const String TOKEN = "Token";
+  static const String USER_NAME = "user_Name";
+  static const String USER_IMAGE = "user image";
+  static const String USER_PHONE_NUMBER = "phone Number";
+  static const String USER_BIO = "userBio";
+  static const String USER_ADDRESS = "userAddress";
+  static const String USER_LOCATION = "userLocation";
+  static const String USER_BUSINESS = "userBusiness";
+}
+
+
+class AppConstants{
+  static const deviceToken = "device-token";
 }

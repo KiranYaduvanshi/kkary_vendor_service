@@ -32,6 +32,7 @@ import 'package:kkary_vendors/modules/services_vendor/views/product_detail.dart'
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/work_do/wordDo.dart';
 import 'package:kkary_vendors/modules/mart_vendor/views/earning_page.dart';
+import 'package:kkary_vendors/modules/views/forgot_password.dart';
 import 'package:kkary_vendors/modules/views/home.dart';
 import 'package:kkary_vendors/modules/mart_vendor/views/profile_screen.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
@@ -91,6 +92,11 @@ class AppPages {
     GetPage(
       name: AppRoutes.login,
       page: () => LoginScreen(),
+      binding: LoginBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.forgotPassword,
+      page: () => ForgotPassword(),
       binding: LoginBinding(),
     ),
     GetPage(

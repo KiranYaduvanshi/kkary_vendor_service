@@ -14,23 +14,19 @@ class AppRoutes {
   static const home = '/homePage';
   static const earnings = '/earnings';
   static const profile = '/profile';
-<<<<<<< HEAD
   static const serviceStatus = '/status';
-=======
   static const martAddProduct = '/martAddproduct';
->>>>>>> 573d171344de7463b45a921622649b52b74d6df0
+  static const forgotPassword = '/forgotPassword';
+
 
   //Mart
   static const orderDetailsMart = '/orderDetails';
 
   static const homeMart = '/homeMart';
   static const bottomNavigationMart = '/bottomNavoigationMart';
-<<<<<<< HEAD
   static const allProductsMart = '/allProducts';
   static const test = '/test';
-=======
   static const allProducts = '/allProducts';
   static const productDetails = '/productDetail';
   static const uiDemo = '/demoUi';
->>>>>>> 573d171344de7463b45a921622649b52b74d6df0
 }
