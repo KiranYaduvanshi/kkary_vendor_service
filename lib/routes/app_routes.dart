@@ -29,4 +29,9 @@ class AppRoutes {
   static const allProducts = '/allProducts';
   static const productDetails = '/productDetail';
   static const uiDemo = '/demoUi';
+  static const martOrderDetails = "/orderDetails";
+  static const vendorHome = "/vendorHome";
+  static const otp = "/otp";
+  static const rating = "/rating";
+  static const profileinfo = "/profileInfo";
 }

@@ -66,8 +66,11 @@ class ProfileScreen extends StatelessWidget {
               ).p(26),
             ],
           ),
-          const Divider(
-            thickness: 1,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Divider(
+              thickness: 1,
+            ),
           ),
           Row(
             children: [
@@ -79,11 +82,14 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-              "Orders".text.semiBold.size(18).make(),
+              "Orders".text.size(18).make(),
             ],
           ).px(26).py(5),
-          const Divider(
-            thickness: 1,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Divider(
+              thickness: 1,
+            ),
           ),
           Row(
             children: [
@@ -94,11 +100,14 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-              "My Details".text.semiBold.size(18).make(),
+              "My Details".text.size(18).make(),
             ],
           ).px(26).py(5),
-          const Divider(
-            thickness: 1,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Divider(
+              thickness: 1,
+            ),
           ),
           Row(
             children: [
@@ -109,11 +118,14 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-              "Notifications".text.semiBold.size(18).make(),
+              "Notifications".text.size(18).make(),
             ],
           ).px(26).py(5),
-          const Divider(
-            thickness: 1,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Divider(
+              thickness: 1,
+            ),
           ),
           Row(
             children: [
@@ -124,7 +136,7 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(
                 width: 20,
               ),
-              "Logout".text.semiBold.size(18).make(),
+              "Logout".text.size(18).make(),
             ],
           ).px(26).py(5),
         ],

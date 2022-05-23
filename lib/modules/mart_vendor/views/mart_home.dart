@@ -29,16 +29,19 @@ class MartHome extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200,
-                childAspectRatio: 3 / 2,
-                crossAxisSpacing: 20,
-                mainAxisSpacing: 20),
-            itemCount: _controller.list.length,
-            itemBuilder: (BuildContext ctx, index) {
-              return menu(context, index);
-            }),
+        child:
+        Obx(
+            ()=>_controller.fetch.value ? GridView.builder(
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 200,
+                  childAspectRatio: 3 / 2,
+                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 20),
+              itemCount: _controller.list.length,
+              itemBuilder: (BuildContext ctx, index) {
+                return menu(context, index);
+              }):Center(child: CircularProgressIndicator()),
+        ),
       ),
     );
   }
@@ -51,6 +54,7 @@ class MartHome extends StatelessWidget {
         _controller.goToPage(_controller.list[index]);
       },
       child: Container(
+
         decoration: BoxDecoration(
           color: AppColors.blueUltraLight,
           borderRadius: BorderRadius.circular(12),
@@ -62,17 +66,24 @@ class MartHome extends StatelessWidget {
               badgeColor: _controller.color[index],
               padding: const EdgeInsets.all(3),
               position: BadgePosition.topEnd(top: 4, end: -8),
+              toAnimate: true,
+              animationDuration: Duration(milliseconds: 3000),
+              animationType: BadgeAnimationType.slide,
               badgeContent: const Icon(
                 Icons.arrow_upward,
                 color: Colors.white,
                 size: 13,
               ),
               child: Container(
+                height: 60,
+                width: 60,
+
+                alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(100),
                 ),
-                child: "10".text.size(32).make().p12(),
+                child: "${_controller.count(_controller.list[index])??0}".text.size(32).make().p12(),
               ),
             ),
             "Total ${_controller.list[index]}".text.bold.size(12).make(),

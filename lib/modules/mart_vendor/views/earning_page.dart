@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:kkary_vendors/modules/mart_vendor/controller/mart_earning_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:get/get.dart';
 
 class EarningPage extends StatelessWidget {
-  const EarningPage({Key? key}) : super(key: key);
+  EarningPage({Key? key}) : super(key: key);
+
+  final MartEarningController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class EarningPage extends StatelessWidget {
               Row(
                 children: [
                   "Today's Earning  ".text.size(17).semiBold.black.make(),
-                  "Rs $totalEarning"
+                  "Rs ${_controller.totalEarnings}"
                       .text
                       .size(16)
                       .semiBold
@@ -61,19 +64,21 @@ class EarningPage extends StatelessWidget {
               )
             ],
           ).py8().px(8),
-          ListView.builder(
-            itemCount: 15,
-            itemBuilder: (BuildContext context, int index) {
-              return items(
-                context: context,
-                image: ImagePaths.imgUser,
-                amount: "157",
-                name: "Nitish Kumar",
-                hashTag: "#5625#$index",
-                onTapAction: () {},
-              ).p(8);
-            },
-          ).expand(),
+          Obx(
+            () => ListView.builder(
+              itemCount: _controller.vendorEarnings.value.length,
+              itemBuilder: (BuildContext context, int index) {
+                return items(
+                  context: context,
+                  image: ImagePaths.imgUser,
+                  amount: "${_controller.vendorEarnings.value[index].totalPrice}",
+                  name: "${_controller.vendorEarnings.value[index].firstName} ${_controller.vendorEarnings.value[index].lastName}",
+                  hashTag: "${_controller.vendorEarnings.value[index].orderId}",
+                  onTapAction: () {},
+                ).p(8);
+              },
+            ).expand(),
+          ),
         ],
       ),
     );

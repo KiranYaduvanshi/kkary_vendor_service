@@ -8,7 +8,7 @@ class MartBottomNavigationController extends GetxController {
   DateTime? currentBackPressTime;
 
   Rx<int> selectedIndex = 0.obs;
-  final List<Widget> widgetOptions = const <Widget>[
+  final List<Widget> widgetOptions =  <Widget>[
     MartHome(),
     EarningPage(),
     ProfileScreen(),

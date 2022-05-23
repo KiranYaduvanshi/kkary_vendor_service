@@ -25,7 +25,7 @@ class Orders extends StatelessWidget {
         actions: [
           InkWell(
             onTap: () => Get.to(
-              const EarningPage(),
+               EarningPage(),
               transition: Transition.zoom,
               duration: const Duration(seconds: 3),
             ),

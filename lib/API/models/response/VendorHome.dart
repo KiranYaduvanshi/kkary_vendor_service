@@ -1,12 +1,12 @@
 class VendorHome {
-  Data? data;
+  VendorHomeData? data;
   String? message;
   int? statusCode;
 
   VendorHome({this.data, this.message, this.statusCode});
 
   VendorHome.fromJson(Map<String, dynamic> json) {
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? new VendorHomeData.fromJson(json['data']) : null;
     message = json['message'];
     statusCode = json['status_code'];
   }
@@ -22,29 +22,32 @@ class VendorHome {
   }
 }
 
-class Data {
+class VendorHomeData {
   int? productCount;
   int? totalDelivered;
   int? pendingOrders;
   int? cancelledOrder;
   int? approvedOrder;
   int? underShipping;
+  int? totalOrders;
 
-  Data(
+  VendorHomeData(
       {this.productCount,
         this.totalDelivered,
         this.pendingOrders,
         this.cancelledOrder,
         this.approvedOrder,
-        this.underShipping});
+        this.underShipping,
+      this.totalOrders});
 
-  Data.fromJson(Map<String, dynamic> json) {
+  VendorHomeData.fromJson(Map<String, dynamic> json) {
     productCount = json['product_count'];
     totalDelivered = json['total_delivered'];
     pendingOrders = json['pending_orders'];
     cancelledOrder = json['cancelled_order'];
     approvedOrder = json['approved_order'];
     underShipping = json['under_shipping'];
+    totalOrders = json['total_orders'];
   }
 
   Map<String, dynamic> toJson() {
@@ -55,6 +58,7 @@ class Data {
     data['cancelled_order'] = this.cancelledOrder;
     data['approved_order'] = this.approvedOrder;
     data['under_shipping'] = this.underShipping;
+    data['total_orders'] = this.totalOrders;
     return data;
   }
 }

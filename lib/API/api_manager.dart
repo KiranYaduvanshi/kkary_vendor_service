@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 
 class APIManager {
   // String? token = PrefrenceUtil.getString(AppStrings.token, "");
+  String token = "882|SaWQuCXtdL8qpWZFM1JvsaeWlA0ru2yijrLMVtL0";
 
   Future<dynamic> getAllCall({required String url}) async {
     print("Calling API: $url");
@@ -16,7 +17,7 @@ class APIManager {
     var responseJson;
     try {
       final response = await http
-          .get(urlForPost, headers: {'Authorization': 'Bearer token'});
+          .get(urlForPost, headers: {'Authorization': 'Bearer $token'});
       responseJson = _response(response);
     } on SocketException {
       throw FetchDataException('No Internet connection');
@@ -30,7 +31,7 @@ class APIManager {
     var responseJson;
     try {
       final response = await http
-          .post(urlForPost, headers: {'Authorization': 'Bearer token'});
+          .post(urlForPost, headers: {'Authorization': 'Bearer $token'});
       responseJson = _response(response);
     } on SocketException {
       throw FetchDataException('No Internet connection');
@@ -50,7 +51,7 @@ class APIManager {
       final response = await http.post(urlForPost,
           headers: {
             'Content-type': 'application/json; charset=UTF-8',
-            'Authorization': 'Bearer token'
+            'Authorization': 'Bearer $token'
           },
           body: jsonEncode(param.toJson()));
       responseJson = _response(response);

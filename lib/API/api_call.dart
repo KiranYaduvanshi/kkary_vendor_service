@@ -7,8 +7,14 @@ import 'package:kkary_vendors/API/api_manager.dart';
 import 'package:kkary_vendors/API/endpoints.dart';
 import 'package:kkary_vendors/API/models/request/forgot_request.dart';
 import 'package:kkary_vendors/API/models/request/login_post.dart';
+import 'package:kkary_vendors/API/models/response/VendorEarnings.dart';
+import 'package:kkary_vendors/API/models/response/VendorHome.dart';
+import 'package:kkary_vendors/API/models/response/Vendor_product_details.dart';
 import 'package:kkary_vendors/API/models/response/forgot_response.dart';
 import 'package:kkary_vendors/API/models/response/login_response.dart';
+import 'package:kkary_vendors/API/models/response/profie_response.dart';
+import 'package:kkary_vendors/API/models/response/vendor_order_details.dart';
+import 'package:kkary_vendors/API/models/response/vendor_products_response.dart';
 import 'package:kkary_vendors/API/result_exception.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 
@@ -57,6 +63,139 @@ class CallAPI {
       print(e);
     } finally {
       print("Done");
+    }
+  }
+
+  // API Get Vendor Home
+  Future<VendorHome?> vendorHome() async {
+
+    try {
+      String url = Endpoints.vendorHome;
+
+      var json = await APIManager().getAllCall(url: url);
+
+      VendorHome vendorHome = VendorHome.fromJson(json);
+
+      if (vendorHome.statusCode == 200) {
+        return  vendorHome;
+      } else {
+        String message =
+        ResultStatusCheck(status: vendorHome.statusCode!).resultCheck();
+        return vendorHome ;
+      }
+    } on Exception catch (e) {
+      return null ;
+    }
+  }
+
+  //API Vendor Earnings
+  Future<VendorEarnings?> vendorEarnings() async {
+
+    try {
+      String url = Endpoints.vendorEarnings;
+
+      var json = await APIManager().getAllCall(url: url);
+
+      VendorEarnings vendorEarnings = VendorEarnings.fromJson(json);
+
+      if (vendorEarnings.statusCode == 200) {
+        return  vendorEarnings;
+      } else {
+        String message =
+        ResultStatusCheck(status: vendorEarnings.statusCode!).resultCheck();
+        return vendorEarnings ;
+      }
+    } on Exception catch (e) {
+      return null ;
+    }
+  }
+
+  //API Vendor Products
+  Future<VendorProductsResponse?> vendorProducts() async {
+
+    try {
+      String url = Endpoints.vendorProducts;
+
+      var json = await APIManager().getAllCall(url: url);
+
+      VendorProductsResponse vendorProductsResponse = VendorProductsResponse.fromJson(json);
+
+      if (vendorProductsResponse.statusCode == 200) {
+        return  vendorProductsResponse;
+      } else {
+        String message =
+        ResultStatusCheck(status: vendorProductsResponse.statusCode!).resultCheck();
+        return vendorProductsResponse ;
+      }
+    } on Exception catch (e) {
+      return null ;
+    }
+  }
+
+  //API Vendor Product Details
+  Future<VendorProductsDetailsResponse?> vendorProductDetails(int id) async {
+
+    try {
+      String url = "${Endpoints.vendorProductDetails}id";
+
+      var json = await APIManager().getAllCall(url: url);
+
+      VendorProductsDetailsResponse vendorProductsDetailsResponse = VendorProductsDetailsResponse.fromJson(json);
+
+      if (vendorProductsDetailsResponse.statusCode == 200) {
+        return  vendorProductsDetailsResponse;
+      } else {
+        String message =
+        ResultStatusCheck(status: vendorProductsDetailsResponse.statusCode!).resultCheck();
+        return vendorProductsDetailsResponse ;
+      }
+    } on Exception catch (e) {
+      return null ;
+    }
+  }
+
+  //API Vendor Order Details
+  Future<VendorOrderDetailsResponse?> vendorOrderDetails(String id) async {
+
+    try {
+      String url = "${Endpoints.vendorOrderDetails}$id";
+
+      var json = await APIManager().getAllCall(url: url);
+
+      VendorOrderDetailsResponse vendorOrderDetailsResponse = VendorOrderDetailsResponse.fromJson(json);
+
+      if (vendorOrderDetailsResponse.statusCode == 200) {
+        return  vendorOrderDetailsResponse;
+      } else {
+        String message =
+        ResultStatusCheck(status: vendorOrderDetailsResponse.statusCode!).resultCheck();
+        return vendorOrderDetailsResponse ;
+      }
+    } on Exception catch (e) {
+      return null ;
+    }
+  }
+
+  //API Profile info
+  Future<ProfileResponse?> profileInfo() async {
+
+    try {
+      String url = "${Endpoints.profileInfo}";
+
+      var json = await APIManager().getAllCall(url: url);
+
+      ProfileResponse profileResponse = ProfileResponse.fromJson(json);
+
+      if (profileResponse.statusCode == 200) {
+        return  profileResponse;
+      } else {
+        String message =
+        ResultStatusCheck(status: profileResponse.statusCode!).resultCheck();
+        return profileResponse ;
+      }
+    } on Exception catch (e) {
+      print(e);
+      return null ;
     }
   }
 
@@ -109,31 +248,4 @@ class CallAPI {
   }
 }
 
-//API Get Sub Categories
-//   Future<List<SubCategoryResult>> fetchSubCategoryAPI(
-//       {required BuildContext context, required int id}) async {
-//     List<SubCategoryResult> _subCategoryResult = [];
-//
-//     try {
-//       String url = "${Endpoints.subCategory}/$id";
-//
-//       var json = await APIManager().getAllCall(url: url);
-//
-//       SubCategory subCategory = SubCategory.fromJson(json);
-//
-//       if (subCategory.statusCode == 200) {
-//         Loader.hide();
-//         return _subCategoryResult = subCategory.result!;
-//       } else {
-//         Loader.hide();
-//         String message =
-//             ResultStatusCheck(status: subCategory.statusCode!).resultCheck();
-//         ToastVx(context: context, message: message);
-//         return _subCategoryResult = [];
-//       }
-//     } on Exception catch (e) {
-//       Loader.hide();
-//       ToastVx(context: context, message: e.toString());
-//       return _subCategoryResult = [];
-//     }
-//   }
+

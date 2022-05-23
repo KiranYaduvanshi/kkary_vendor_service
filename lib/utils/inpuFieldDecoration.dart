@@ -29,7 +29,7 @@ class CustomeInputDecoration {
     return InputDecoration(
       fillColor: Colors.white,
       filled: true,
-      floatingLabelBehavior: FloatingLabelBehavior.never,
+      floatingLabelBehavior: FloatingLabelBehavior.auto,
       contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
 
       label: Row(
