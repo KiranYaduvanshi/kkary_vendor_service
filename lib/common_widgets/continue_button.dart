@@ -4,7 +4,7 @@ import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CustomButtons {
-  Widget continueButton() {
+  Widget continueButton({required Function function}) {
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
@@ -13,7 +13,9 @@ class CustomButtons {
               topLeft: Radius.circular(18), topRight: Radius.circular(18)),
           boxShadow: [BoxShadow(blurRadius: 3, color: Colors.grey)]),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          function();
+        },
         child: "Continue".text.make().px(10).py(10),
         style: ElevatedButton.styleFrom(
           primary: AppColors.blueDark,

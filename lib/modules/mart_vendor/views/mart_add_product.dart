@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/mart_vendor/controller/mart_product_detail_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
@@ -12,6 +14,7 @@ class MartAddProduct extends StatelessWidget {
   // List of items in our dropdown menu
   var items = ['Male ', 'Female '];
 
+  MartProductDetailsController _controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,6 +93,7 @@ class MartAddProduct extends StatelessWidget {
             TextFormField(
               autovalidateMode: AutovalidateMode.onUserInteraction,
               textInputAction: TextInputAction.done,
+
               decoration: CustomeInputDecoration.formDecorationSquare(
                   AppStrings.enterTax, AppStrings.enterTax),
               validator: (value) {},

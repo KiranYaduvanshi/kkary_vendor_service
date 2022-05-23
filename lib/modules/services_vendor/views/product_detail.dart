@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kkary_vendors/API/models/response/Vendor_product_details.dart';
+import 'package:kkary_vendors/modules/mart_vendor/controller/mart_product_detail_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';

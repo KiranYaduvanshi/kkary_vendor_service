@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/common_widgets/linear_progress_indicator.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/partner_controller.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/state_controller.dart';
+import 'package:kkary_vendors/modules/services_vendor/controller/where_live_controller.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLiveWidget.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class WhereLiveClass extends StatelessWidget {
-  var controller = Get.put(RadioController());
-  var radioController = Get.find<RadioController>();
+  var controller = Get.put(PartnerController());
+  var whereliveController = Get.find<WhereLiveController>();
 
   WhereLiveClass({Key? key}) : super(key: key);
 
@@ -36,8 +38,7 @@ class WhereLiveClass extends StatelessWidget {
             child: Column(
               children: [
                 for (int i = 0; i < 5; i++)
-                  RadioCommonWidget(
-                      "Banglore", i, radioController.radioExperience)
+                  RadioCommonWidget(controller.cityTiles[i], i)
               ],
             ),
           ).expand()

@@ -1,13 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:kkary_vendors/modules/views/profile_screen.dart';
+import 'package:kkary_vendors/modules/mart_vendor/controller/mart_earning_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:get/get.dart';
 
 class EarningPage extends StatelessWidget {
-  const EarningPage({Key? key}) : super(key: key);
+  EarningPage({Key? key}) : super(key: key);
+
+  final MartEarningController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class EarningPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        title: "Earning".text.make(),
+        title: "Earnings".text.make(),
         centerTitle: true,
         backgroundColor: AppColors.blueLight,
         // leading: const Icon(Icons.arrow_back),
@@ -28,9 +30,10 @@ class EarningPage extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  "Today's Earning  ".text.semiBold.black.make(),
-                  "Rs $totalEarning"
+                  "Today's Earning  ".text.size(17).semiBold.black.make(),
+                  "Rs ${_controller.totalEarnings}"
                       .text
+                      .size(16)
                       .semiBold
                       .color(AppColors.blueLight)
                       .make(),
@@ -55,29 +58,27 @@ class EarningPage extends StatelessWidget {
                     const SizedBox(
                       width: 10,
                     ),
-                    "January".text.size(15).black.make(),
+                    "January".text.size(15).color(AppColors.blueLight).make(),
                   ],
                 ).px(6).py(2),
               )
             ],
           ).py8().px(8),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                for (int i = 0; i < 10; i++)
-                  items(
-                    context: context,
-                    image: ImagePaths.imgUser,
-                    amount: "157",
-                    name: "Nitish Kumar",
-                    hashTag: "#5625",
-                    onTapAction: () {
-                      Get.to(const ProfileScreen());
-                    },
-                  )
-              ],
-            ),
-          ).expand(),
+          Obx(
+            () => ListView.builder(
+              itemCount: _controller.vendorEarnings.value.length,
+              itemBuilder: (BuildContext context, int index) {
+                return items(
+                  context: context,
+                  image: ImagePaths.imgUser,
+                  amount: "${_controller.vendorEarnings.value[index].totalPrice}",
+                  name: "${_controller.vendorEarnings.value[index].firstName} ${_controller.vendorEarnings.value[index].lastName}",
+                  hashTag: "${_controller.vendorEarnings.value[index].orderId}",
+                  onTapAction: () {},
+                ).p(8);
+              },
+            ).expand(),
+          ),
         ],
       ),
     );
@@ -94,7 +95,8 @@ class EarningPage extends StatelessWidget {
     return InkWell(
       onTap: () => onTapAction(),
       child: Card(
-        elevation: 2,
+        color: Colors.white,
+        elevation: 3,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
@@ -106,7 +108,7 @@ class EarningPage extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     backgroundColor: AppColors.blueLight,
-                    radius: 25,
+                    radius: 26,
                     child: CircleAvatar(
                       // foregroundImage: AssetImage(AppImages.profileImage),
                       foregroundImage: AssetImage(ImagePaths.imgUser),

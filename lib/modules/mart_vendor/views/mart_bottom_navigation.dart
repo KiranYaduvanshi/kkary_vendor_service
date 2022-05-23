@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/mart_vendor/controller/mart_bottom_navigation_controller.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class MartBottomNavigation extends StatelessWidget {
   const MartBottomNavigation({Key? key}) : super(key: key);
@@ -12,6 +11,7 @@ class MartBottomNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     MartBottomNavigationController _controller = Get.find();
     return Scaffold(
+      backgroundColor: Colors.white,
       body: WillPopScope(
         onWillPop: _controller.onWillPop,
         child: Obx(

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:kkary_vendors/modules/views/earning_page.dart';
-import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -30,7 +27,7 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     backgroundColor: AppColors.blueLight,
-                    radius: 29,
+                    radius: 30,
                     child: CircleAvatar(
                       // foregroundImage: AssetImage(AppImages.profileImage),
                       foregroundImage: AssetImage(ImagePaths.imgUser),
@@ -69,59 +66,77 @@ class ProfileScreen extends StatelessWidget {
               ).p(26),
             ],
           ),
-          const Divider(
-            thickness: 0.5,
-            color: AppColors.grayDark,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Divider(
+              thickness: 1,
+            ),
           ),
           Row(
             children: [
               Image.asset(
                 ImagePaths.myOrders,
                 color: AppColors.blueLight,
+                width: 20,
               ),
               const SizedBox(
                 width: 20,
               ),
-              "Orders".text.semiBold.size(18).make(),
+              "Orders".text.size(18).make(),
             ],
           ).px(26).py(5),
-          const Divider(
-            thickness: 0.5,
-            color: AppColors.grayDark,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Divider(
+              thickness: 1,
+            ),
           ),
           Row(
             children: [
-              Image.asset(ImagePaths.myDetails),
+              Image.asset(
+                ImagePaths.myDetails,
+                width: 20,
+              ),
               const SizedBox(
                 width: 20,
               ),
-              "My Details".text.semiBold.size(18).make(),
+              "My Details".text.size(18).make(),
             ],
           ).px(26).py(5),
-          const Divider(
-            thickness: 0.5,
-            color: AppColors.grayDark,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Divider(
+              thickness: 1,
+            ),
           ),
           Row(
             children: [
-              Image.asset(ImagePaths.notifications),
+              Image.asset(
+                ImagePaths.notifications,
+                width: 20,
+              ),
               const SizedBox(
                 width: 20,
               ),
-              "Notifications".text.semiBold.size(18).make(),
+              "Notifications".text.size(18).make(),
             ],
           ).px(26).py(5),
-          const Divider(
-            thickness: 0.5,
-            color: AppColors.grayDark,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: const Divider(
+              thickness: 1,
+            ),
           ),
           Row(
             children: [
-              Image.asset(ImagePaths.logout),
+              Image.asset(
+                ImagePaths.logout,
+                width: 20,
+              ),
               const SizedBox(
                 width: 20,
               ),
-              "Logout".text.semiBold.size(18).make(),
+              "Logout".text.size(18).make(),
             ],
           ).px(26).py(5),
         ],

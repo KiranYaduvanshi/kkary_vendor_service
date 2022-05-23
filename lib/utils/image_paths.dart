@@ -18,5 +18,14 @@ class ImagePaths {
   static const String icPrint = "assets/images/ic_print.png";
   static const String money = "assets/images/ic_money.png";
   static const String circulerPerson = "assets/images/ic_circuler_user.png";
+  static const String icnotification = "assets/images/ic_notification.png";
   static const String cloudImg = "assets/images/cloud.png";
+  static const String ic_documents = "assets/images/ic_documents.png";
+  static const String ic_logout = "assets/images/ic_logout.png";
+  static const String ic_about = "assets/images/ic_about.png";
+  static const String ic_payment = "assets/images/ic_payment.png";
+  static const String ic_setting = "assets/images/ic_settings.png";
+  static const String ic_info = "assets/images/ic_info.png";
+  static const String ic_taxinfo = "assets/images/ic_taxinfo.png";
+  static const String ic_notifications = "assets/images/ic_notifications.png";
 }
