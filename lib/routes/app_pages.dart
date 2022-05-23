@@ -53,11 +53,11 @@ import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/routes/ui_demo.dart';
 
 class AppPages {
-  static const homeRoute = "homeDriver";
+  static const homeRoute = AppRoutes.home;
 
   static final routes = [
     GetPage(
-      name:"/homeDriver",
+      name: "/homeDriver",
       page: () => const DriverHome(),
     ),
     GetPage(
@@ -129,13 +129,13 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.profile,
-      page: () => const ProfileScreen(),
+      page: () => ProfileScreen(),
       // binding: ProfileBinding()
-    ),   GetPage(
-      name: AppRoutes.profileinfo,
-      page: () =>  ProfileInfo(),
-      binding: ProfileBinding()
     ),
+    GetPage(
+        name: AppRoutes.profileinfo,
+        page: () => ProfileInfo(),
+        binding: ProfileBinding()),
     // GetPage(
     //   name: AppRoutes.serviceStatus,
     //   page: () => ServiceStatus(),
@@ -162,7 +162,8 @@ class AppPages {
       name: AppRoutes.homeMart,
       page: () => const MartHome(),
       binding: MartHomeBinding(),
-    ),  GetPage(
+    ),
+    GetPage(
       name: AppRoutes.vendorHome,
       page: () => const VendorHome(),
       binding: VendorHomeBinding(),
@@ -193,7 +194,6 @@ class AppPages {
       page: () => MartOrderDetail(),
       binding: MartOrderDetailBinding(),
     ),
-
 
     GetPage(
       name: AppRoutes.productDetails,

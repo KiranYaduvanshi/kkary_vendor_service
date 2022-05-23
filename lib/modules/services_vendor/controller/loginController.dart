@@ -28,9 +28,9 @@ class LoginController extends GetxController {
     return eye.value ? AppIcons.visibilityOff : AppIcons.visibility;
   }
 
- deviceToken() async {
+  deviceToken() async {
     token = (await FirebaseMessaging.instance.getToken())!;
-    phoneEmailController.text = "ankitemail@gmail.com";
+    phoneEmailController.text = "ankittest@gmail.com";
     passwordController.text = "12345678";
     print("Login Token..... $token");
   }
@@ -39,47 +39,45 @@ class LoginController extends GetxController {
     LoginPost loginPost = LoginPost(
         email: phoneEmailController.text,
         password: passwordController.text,
-        userType: user,
+        userType: "1",
         deviceToken: token);
-    // debugPrint("${loginPost.userType} ${loginPost.email} ${loginPost.password} ${loginPost.deviceToken}");
+
+    debugPrint(
+        "${loginPost.userType} ${loginPost.email} ${loginPost.password} ${loginPost.deviceToken}");
     await CallAPI().login(params: loginPost);
 
     // ForgotPost post = ForgotPost(email: "ankitemail@gmail.com" , userType: "2");
     // await CallAPI().login(params: LoginPost());
   }
 
+  // forgotPassword(String user) async {
+  //   ForgotRequest postData =  ForgotRequest(email: phoneEmailController.text, userType: user);
+  //
+  //   ForgotResponse result = await CallAPI()
+  //       .forgot( params: postData);
+  //
+  // }
 
-   // forgotPassword(String user) async {
-   //   ForgotRequest postData =  ForgotRequest(email: phoneEmailController.text, userType: user);
-   //
-   //   ForgotResponse result = await CallAPI()
-   //       .forgot( params: postData);
-   //
-   // }
+  // handleEmail(String value) {
+  //   if (EmailValidator.validate(value)) {
+  //     phoneEmailController.text = value;
+  //     return null;
+  //   }
+  //   return "Please Enter Valid Email";
+  // }
 
-   // handleEmail(String value) {
-   //   if (EmailValidator.validate(value)) {
-   //     phoneEmailController.text = value;
-   //     return null;
-   //   }
-   //   return "Please Enter Valid Email";
-   // }
+  // submitEmail() async {
+  //   if (_formKey.currentState!.validate()) {
+  //     await forgotPassword();
+  //     // Navigator.pushNamed(context, MyRoutes.otpPage);
+  //   }
+  // }
 
-   // submitEmail() async {
-   //   if (_formKey.currentState!.validate()) {
-   //     await forgotPassword();
-   //     // Navigator.pushNamed(context, MyRoutes.otpPage);
-   //   }
-   // }
-
-
-
-@override
+  @override
   void onInit() {
     deviceToken();
     super.onInit();
   }
-
 
   String? handleEmail() {
     if (phoneEmailController.text.isNotEmpty) {
@@ -97,7 +95,6 @@ class LoginController extends GetxController {
     }
   }
 
-
   userVerification(String user) async {
     // loading.value = true;
     if (fformKey.currentState!.validate()) {
@@ -108,25 +105,27 @@ class LoginController extends GetxController {
       LoginPost loginPost = LoginPost(
           email: phoneEmailController.text,
           password: passwordController.text,
-          userType: user,
-          deviceToken: token);
-      // debugPrint("${loginPost.userType} ${loginPost.email} ${loginPost.password} ${loginPost.deviceToken}");
+          userType: "1",
+          deviceToken: "");
+      debugPrint(
+          "kkkkkkk ${loginPost.userType} ${loginPost.email} ${loginPost.password} ${loginPost.deviceToken}");
       await CallAPI().login(params: loginPost);
     } else {
       print("Credentail is invalid ");
     }
   }
+
   userVerificationForgot() async {
     // loading.value = true;
     if (formKey.currentState!.validate()) {
       print(formKey.currentState!.validate());
-        ForgotRequest postData =  ForgotRequest(email: phoneEmailController.text, userType: user);
+      ForgotRequest postData =
+          ForgotRequest(email: phoneEmailController.text, userType: user);
 
-        ForgotResponse result = await CallAPI()
-            .forgot( params: postData);
-        debugPrint(result.message);
-      } else {
-        print("Credentail is invalid ");
-      }
+      ForgotResponse result = await CallAPI().forgot(params: postData);
+      debugPrint(result.message);
+    } else {
+      print("Credentail is invalid ");
     }
+  }
 }
