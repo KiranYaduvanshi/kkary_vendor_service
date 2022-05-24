@@ -19,6 +19,7 @@ class LoginController extends GetxController {
   FocusNode passFn = FocusNode();
   final formKey = GlobalKey<FormState>();
   final fformKey = GlobalKey<FormState>();
+  RxBool loginFetch = true.obs;
 
   TextEditingController phoneEmailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -30,19 +31,20 @@ class LoginController extends GetxController {
 
  deviceToken() async {
     token = (await FirebaseMessaging.instance.getToken())!;
-    phoneEmailController.text = "ankitemail@gmail.com";
+    phoneEmailController.text = "ankittest@gmail.com";
     passwordController.text = "12345678";
     print("Login Token..... $token");
   }
 
   Future<void> login(String user) async {
+loginFetch.value = false;
     LoginPost loginPost = LoginPost(
         email: phoneEmailController.text,
         password: passwordController.text,
         userType: user,
         deviceToken: token);
     // debugPrint("${loginPost.userType} ${loginPost.email} ${loginPost.password} ${loginPost.deviceToken}");
-    await CallAPI().login(params: loginPost);
+    await CallAPI().login(params: loginPost).whenComplete(() => loginFetch.value = true);
 
     // ForgotPost post = ForgotPost(email: "ankitemail@gmail.com" , userType: "2");
     // await CallAPI().login(params: LoginPost());

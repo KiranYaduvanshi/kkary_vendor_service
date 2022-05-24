@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
+import 'package:kkary_vendors/utils/app_strings.dart';
 import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -72,22 +75,28 @@ class ProfileScreen extends StatelessWidget {
               thickness: 1,
             ),
           ),
-          Row(
-            children: [
-              Image.asset(
-                ImagePaths.myOrders,
-                color: AppColors.blueLight,
-                width: 20,
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              "Orders".text.size(18).make(),
-            ],
-          ).px(26).py(5),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: const Divider(
+          GestureDetector(
+            onTap: () {
+              AppStrings.userType=="1"?
+              Get.toNamed(AppRoutes.orderDetailsMart , arguments: "Orders"):Get.toNamed(AppRoutes.orders);
+            },
+            child: Row(
+              children: [
+                Image.asset(
+                  ImagePaths.myOrders,
+                  color: AppColors.blueLight,
+                  width: 20,
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                "Orders".text.size(18).make(),
+              ],
+            ).px(26).py(5),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Divider(
               thickness: 1,
             ),
           ),
@@ -103,9 +112,9 @@ class ProfileScreen extends StatelessWidget {
               "My Details".text.size(18).make(),
             ],
           ).px(26).py(5),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: const Divider(
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Divider(
               thickness: 1,
             ),
           ),
@@ -127,18 +136,23 @@ class ProfileScreen extends StatelessWidget {
               thickness: 1,
             ),
           ),
-          Row(
-            children: [
-              Image.asset(
-                ImagePaths.logout,
-                width: 20,
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              "Logout".text.size(18).make(),
-            ],
-          ).px(26).py(5),
+          GestureDetector(
+            onTap: () {
+              Get.offAllNamed(AppRoutes.home);
+            },
+            child: Row(
+              children: [
+                Image.asset(
+                  ImagePaths.logout,
+                  width: 20,
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                "Logout".text.size(18).make(),
+              ],
+            ).px(26).py(5),
+          ),
         ],
       ),
     );

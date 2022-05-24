@@ -50,7 +50,7 @@ class MartHomeController extends GetxController {
     if (page == "Products") {
       Get.toNamed(AppRoutes.allProductsMart, arguments: page);
     } else if (page == "Orders") {
-      Get.toNamed(AppRoutes.orders, arguments: page);
+      Get.toNamed(AppRoutes.orderDetailsMart, arguments: page);
     } else if (page == "Delivered Orders") {
       Get.toNamed(AppRoutes.orderDetailsMart, arguments: page);
     } else if (page == "Approved Orders") {

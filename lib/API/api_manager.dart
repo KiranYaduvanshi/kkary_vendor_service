@@ -9,10 +9,12 @@ import 'package:http/http.dart' as http;
 
 class APIManager {
   // String? token = PrefrenceUtil.getString(AppStrings.token, "");
-  String token = "882|SaWQuCXtdL8qpWZFM1JvsaeWlA0ru2yijrLMVtL0";
+  String token = Endpoints.token;
 
   Future<dynamic> getAllCall({required String url}) async {
     print("Calling API: $url");
+
+    print("Calling API: $token");
     Uri urlForPost = Uri.parse("${Endpoints.baseUrl}$url");
     var responseJson;
     try {
@@ -27,6 +29,8 @@ class APIManager {
 
   Future<dynamic> postAllCallNonParam({required String url}) async {
     print("Calling API: $url");
+
+    print("Calling API: $token");
     Uri urlForPost = Uri.parse("${Endpoints.baseUrl}$url");
     var responseJson;
     try {
@@ -46,6 +50,9 @@ class APIManager {
     Uri urlForPost = Uri.parse("${Endpoints.baseUrl}$url");
 
     print("Calling API: $urlForPost");
+    print("Calling API: $token");
+
+
     var responseJson;
     try {
       final response = await http.post(urlForPost,

@@ -24,6 +24,7 @@ import 'package:kkary_vendors/modules/services_vendor/binding/partnet_binding.da
 import 'package:kkary_vendors/modules/services_vendor/binding/profile_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/rating_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/service_status-binding.dart';
+import 'package:kkary_vendors/modules/services_vendor/binding/vendor_bottom_navigation-binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/vendor_home_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/loginController.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/product_detail_binding.dart';
@@ -41,6 +42,7 @@ import 'package:kkary_vendors/modules/services_vendor/views/otp.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/rating.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/service_status.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/product_detail.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/vendor_bottom_navigation.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/vendor_home.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/vendor_services_status.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
@@ -53,11 +55,11 @@ import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/routes/ui_demo.dart';
 
 class AppPages {
-  static const homeRoute = "homeDriver";
+  static const homeRoute = AppRoutes.home;
 
   static final routes = [
     GetPage(
-      name:"/homeDriver",
+      name: "/homeDriver",
       page: () => const DriverHome(),
     ),
     GetPage(
@@ -131,11 +133,11 @@ class AppPages {
       name: AppRoutes.profile,
       page: () => const ProfileScreen(),
       // binding: ProfileBinding()
-    ),   GetPage(
-      name: AppRoutes.profileinfo,
-      page: () =>  ProfileInfo(),
-      binding: ProfileBinding()
     ),
+    GetPage(
+        name: AppRoutes.profileinfo,
+        page: () => ProfileInfo(),
+        binding: ProfileBinding()),
     // GetPage(
     //   name: AppRoutes.serviceStatus,
     //   page: () => ServiceStatus(),
@@ -153,16 +155,17 @@ class AppPages {
     ),
 
     //Mart
-    // GetPage(
-    //   name: AppRoutes.orderDetailsMart,
-    //   page: () => const MartOrderStatus(),
-    //   binding: MartOrderStatusBinding(),
-    // ),
+    GetPage(
+      name: AppRoutes.orderDetailsMart,
+      page: () =>  MartOrderStatus(),
+      binding: MartOrderStatusBinding(),
+    ),
     GetPage(
       name: AppRoutes.homeMart,
       page: () => const MartHome(),
       binding: MartHomeBinding(),
-    ),  GetPage(
+    ),
+    GetPage(
       name: AppRoutes.vendorHome,
       page: () => const VendorHome(),
       binding: VendorHomeBinding(),
@@ -171,6 +174,11 @@ class AppPages {
       name: AppRoutes.bottomNavigationMart,
       page: () => const MartBottomNavigation(),
       binding: MartBottomNavigationBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.vendorBottomNavigationMart,
+      page: () => const VendorBottomNavigation(),
+      binding: VendorBottomNavigationBinding(),
     ),
     GetPage(
       name: AppRoutes.allProductsMart,
@@ -193,7 +201,6 @@ class AppPages {
       page: () => MartOrderDetail(),
       binding: MartOrderDetailBinding(),
     ),
-
 
     GetPage(
       name: AppRoutes.productDetails,
