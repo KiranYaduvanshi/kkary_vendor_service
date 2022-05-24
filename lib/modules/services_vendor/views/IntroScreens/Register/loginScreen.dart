@@ -132,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(25),
                         )),
                     onPressed: () {
-                      controller.userVerification(nextRoute[0]);
+                      controller.login(nextRoute[0]);
                     },
                     child: AppStrings.login.text.lg
                         .color(AppColors.white)

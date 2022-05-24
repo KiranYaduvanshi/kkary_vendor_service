@@ -7,16 +7,14 @@ class Endpoints {
   //     "https://kkary.vickyamule.xyz/public/assets/";
 
   //Login endpoints
-  static const String login = "/service-provider-login";
+  static const String login = "/vendor-login";
   static const String forgot = "/service-provider-forgot-password";
-  static const String vendorHome =  "/vendor-home-data";
+  static const String vendorHome = "/vendor-home-data";
 
-  static const String vendorEarnings="/vendor-earnings";
-  static const String vendorProducts="/vendor-products";
-  static const String vendorProductDetails="/product-description/";
+  static const String vendorEarnings = "/vendor-earnings";
+  static const String vendorProducts = "/vendor-products";
+  static const String vendorProductDetails = "/product-description/";
 
   static const String vendorOrderDetails = "/vendor-product-details/";
   static const String profileInfo = "/vendor-profile";
-
-
 }
