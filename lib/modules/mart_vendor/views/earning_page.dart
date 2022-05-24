@@ -17,7 +17,7 @@ class EarningPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
-        title: "Earnings".text.make(),
+        title: "${_controller.email}".text.make(),
         centerTitle: true,
         backgroundColor: AppColors.blueLight,
         // leading: const Icon(Icons.arrow_back),
@@ -71,8 +71,10 @@ class EarningPage extends StatelessWidget {
                 return items(
                   context: context,
                   image: ImagePaths.imgUser,
-                  amount: "${_controller.vendorEarnings.value[index].totalPrice}",
-                  name: "${_controller.vendorEarnings.value[index].firstName} ${_controller.vendorEarnings.value[index].lastName}",
+                  amount:
+                      "${_controller.vendorEarnings.value[index].totalPrice}",
+                  name:
+                      "${_controller.vendorEarnings.value[index].firstName} ${_controller.vendorEarnings.value[index].lastName}",
                   hashTag: "${_controller.vendorEarnings.value[index].orderId}",
                   onTapAction: () {},
                 ).p(8);

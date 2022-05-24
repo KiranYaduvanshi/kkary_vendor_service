@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kkary_vendors/modules/mart_vendor/controller/mart_profile_screen_controller.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
@@ -7,7 +8,9 @@ import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  ProfileScreen({Key? key}) : super(key: key);
+
+  MartProfileScreenController _controller = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -45,20 +48,25 @@ class ProfileScreen extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            "Aman Garg"
+                            "${_controller.name}"
                                 .text
                                 .fontWeight(FontWeight.w500)
                                 .size(17)
                                 .make(),
-                            const Icon(
-                              Icons.edit,
-                              color: AppColors.blueLight,
-                              size: 16,
-                            ).px(4),
+                            InkWell(
+                              onTap: () {
+                                Get.toNamed(AppRoutes.profileinfo);
+                              },
+                              child: const Icon(
+                                Icons.edit,
+                                color: AppColors.blueLight,
+                                size: 16,
+                              ).px(4),
+                            ),
                           ],
                         ),
                       ),
-                      "aman.garg@gmail.com"
+                      "${_controller.email}"
                           .text
                           .color(AppColors.grayDark)
                           .make()
@@ -77,8 +85,9 @@ class ProfileScreen extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              AppStrings.userType=="1"?
-              Get.toNamed(AppRoutes.orderDetailsMart , arguments: "Orders"):Get.toNamed(AppRoutes.orders);
+              AppStrings.userType == "1"
+                  ? Get.toNamed(AppRoutes.orderDetailsMart, arguments: "Orders")
+                  : Get.toNamed(AppRoutes.orders);
             },
             child: Row(
               children: [

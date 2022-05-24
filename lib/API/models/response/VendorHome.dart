@@ -6,7 +6,8 @@ class VendorHome {
   VendorHome({this.data, this.message, this.statusCode});
 
   VendorHome.fromJson(Map<String, dynamic> json) {
-    data = json['data'] != null ? new VendorHomeData.fromJson(json['data']) : null;
+    data =
+        json['data'] != null ? new VendorHomeData.fromJson(json['data']) : null;
     message = json['message'];
     statusCode = json['status_code'];
   }
@@ -33,11 +34,11 @@ class VendorHomeData {
 
   VendorHomeData(
       {this.productCount,
-        this.totalDelivered,
-        this.pendingOrders,
-        this.cancelledOrder,
-        this.approvedOrder,
-        this.underShipping,
+      this.totalDelivered,
+      this.pendingOrders,
+      this.cancelledOrder,
+      this.approvedOrder,
+      this.underShipping,
       this.totalOrders});
 
   VendorHomeData.fromJson(Map<String, dynamic> json) {

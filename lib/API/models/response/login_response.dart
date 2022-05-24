@@ -36,15 +36,15 @@ class Data {
 
   Data(
       {this.firstName,
-        this.lastName,
-        this.email,
-        this.mobileNo,
-        this.userType,
-        this.businessName,
-        this.bio,
-        this.address,
-        this.image,
-        this.token});
+      this.lastName,
+      this.email,
+      this.mobileNo,
+      this.userType,
+      this.businessName,
+      this.bio,
+      this.address,
+      this.image,
+      this.token});
 
   Data.fromJson(Map<String, dynamic> json) {
     firstName = json['first_name'];

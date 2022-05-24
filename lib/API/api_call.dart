@@ -18,6 +18,8 @@ import 'package:kkary_vendors/API/models/response/vendor_order_details.dart';
 import 'package:kkary_vendors/API/models/response/vendor_products_response.dart';
 import 'package:kkary_vendors/API/result_exception.dart';
 import 'package:kkary_vendors/routes/app_routes.dart';
+import 'package:kkary_vendors/utils/app_strings.dart';
+import 'package:kkary_vendors/utils/shared_prefrences.dart';
 
 import 'models/response/login_response.dart';
 
@@ -36,14 +38,12 @@ class CallAPI {
         debugPrint("Login..... Sucesss");
         debugPrint("Login..  ${params.email} ${params.password}");
         // _loginBool = false;
-        // PrefrenceUtil.setString(
-        //     AppStrings.USER_EMAil, "${login.data!.email}");
+        // PrefrenceUtil.setString(AppStrings.USER_EMAil, "${login.data!.email}");
         // PrefrenceUtil.setString(AppStrings.PASSWORD, "${params.password}");
         // PrefrenceUtil.setString(AppStrings.TOKEN, "${login.data!.token}");
         // PrefrenceUtil.setString(
         //     AppStrings.USER_NAME, "${login.data!.firstName}");
-        // PrefrenceUtil.setString(
-        //     AppStrings.USER_IMAGE, "${login.data!.image}");
+        // PrefrenceUtil.setString(AppStrings.USER_IMAGE, "${login.data!.image}");
         // PrefrenceUtil.setString(
         //     AppStrings.USER_ADDRESS, "${login.data!.address}");
         // PrefrenceUtil.setString(AppStrings.USER_BIO, "${login.data!.bio}");
@@ -107,8 +107,11 @@ class CallAPI {
       }
     } on Exception catch (e) {
       return null;
+<<<<<<< HEAD
     } finally {
       print("Done");
+=======
+>>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
     }
   }
 
@@ -132,8 +135,11 @@ class CallAPI {
       }
     } on Exception catch (e) {
       return null;
+<<<<<<< HEAD
     } finally {
       print("Done");
+=======
+>>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
     }
   }
 
@@ -180,6 +186,7 @@ class CallAPI {
       }
     } on Exception catch (e) {
       return null;
+<<<<<<< HEAD
     }
   }
 
@@ -203,6 +210,8 @@ class CallAPI {
       }
     } on Exception catch (e) {
       return null;
+=======
+>>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
     }
   }
 

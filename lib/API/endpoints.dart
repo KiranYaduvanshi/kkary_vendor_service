@@ -20,5 +20,8 @@ class Endpoints {
 
   static const String vendorOrderDetails = "/vendor-product-details/";
   static const String profileInfo = "/vendor-profile";
+<<<<<<< HEAD
   static const String vendorOrders = "/vendor-orders?type=";
+=======
+>>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
 }
