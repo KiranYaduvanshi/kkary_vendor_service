@@ -1,6 +1,6 @@
 class Endpoints {
   //Base Urls Endpoints
-  static  String token = "";
+  static String token = "";
   static const String baseUrl = "http://13.244.84.23/api";
 
   // static const String baseUrl = "https://kkary.vickyamule.xyz/public/api";
@@ -20,8 +20,5 @@ class Endpoints {
 
   static const String vendorOrderDetails = "/vendor-product-details/";
   static const String profileInfo = "/vendor-profile";
-<<<<<<< HEAD
   static const String vendorOrders = "/vendor-orders?type=";
-=======
->>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
 }
