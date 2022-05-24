@@ -1,5 +1,6 @@
 class AppRoutes {
   //SERVICES
+
   //Register
   static const workDoRegister = '/workDo';
   static const partner = '/partner';
@@ -18,12 +19,12 @@ class AppRoutes {
   static const martAddProduct = '/martAddproduct';
   static const forgotPassword = '/forgotPassword';
 
-
   //Mart
-  static const orderDetailsMart = '/orderDetails';
+  static const orderDetailsMart = '/orderallDetails';
 
   static const homeMart = '/homeMart';
   static const bottomNavigationMart = '/bottomNavoigationMart';
+  static const vendorBottomNavigationMart = '/vendorBottomNavoigationMart';
   static const allProductsMart = '/allProducts';
   static const test = '/test';
   static const allProducts = '/allProducts';

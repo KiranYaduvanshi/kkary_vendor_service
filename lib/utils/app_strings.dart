@@ -1,4 +1,5 @@
 class AppStrings {
+  static String userType = "";
   static const whereDolive = "Where Do you Live?";
   static const woekDo = "What work Do you do?";
   static const aboutwork = "Tell us About your Work?";

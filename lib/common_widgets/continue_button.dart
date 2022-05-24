@@ -28,9 +28,11 @@ class CustomButtons {
     );
   }
 
-  Widget button({required String text, required Color color}) {
+  Widget button({required String text, required Color color , required Function  fun}) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: () {
+        fun();
+      },
       child: text.text.make(),
       style: ElevatedButton.styleFrom(
         primary: color,

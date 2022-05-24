@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/loginController.dart';
+import 'package:kkary_vendors/utils/app_colors.dart';
+import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/src/extensions/string_ext.dart';
 import 'package:velocity_x/src/flutter/padding.dart';
 
@@ -35,8 +37,9 @@ class ForgotPassword extends StatelessWidget {
             Container(
               width: MediaQuery.of(context).size.width * 1,
               alignment: Alignment.center,
-              child: Image.asset("assets/images/img_lock.png"),
+              child:const Icon(Icons.password , color: AppColors.blueLight,size: 120,),
             ),
+            const SizedBox(height: 30,),
             "Please Provide your account email for which you \nwant to reset your password"
                 .text
                 .coolGray400

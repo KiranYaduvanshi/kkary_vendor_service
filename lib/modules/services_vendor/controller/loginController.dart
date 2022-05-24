@@ -19,6 +19,7 @@ class LoginController extends GetxController {
   FocusNode passFn = FocusNode();
   final formKey = GlobalKey<FormState>();
   final fformKey = GlobalKey<FormState>();
+  RxBool loginFetch = true.obs;
 
   TextEditingController phoneEmailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -36,15 +37,16 @@ class LoginController extends GetxController {
   }
 
   Future<void> login(String user) async {
+    loginFetch.value = false;
     LoginPost loginPost = LoginPost(
         email: phoneEmailController.text,
         password: passwordController.text,
         userType: "1",
         deviceToken: token);
-
-    debugPrint(
-        "${loginPost.userType} ${loginPost.email} ${loginPost.password} ${loginPost.deviceToken}");
-    await CallAPI().login(params: loginPost);
+    // debugPrint("${loginPost.userType} ${loginPost.email} ${loginPost.password} ${loginPost.deviceToken}");
+    await CallAPI()
+        .login(params: loginPost)
+        .whenComplete(() => loginFetch.value = true);
 
     // ForgotPost post = ForgotPost(email: "ankitemail@gmail.com" , userType: "2");
     // await CallAPI().login(params: LoginPost());

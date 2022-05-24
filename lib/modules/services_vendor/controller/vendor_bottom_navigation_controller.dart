@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kkary_vendors/modules/mart_vendor/views/mart_home.dart';
-import 'package:kkary_vendors/modules/mart_vendor/views/earning_page.dart';
 import 'package:kkary_vendors/modules/mart_vendor/views/profile_screen.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/orders.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/vendor_home.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/vendor_services_status.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
 
-class MartBottomNavigationController extends GetxController {
+class VendorBottomNavigationController extends GetxController {
   DateTime? currentBackPressTime;
   Rx<int> selectedIndex = 0.obs;
   final List<Widget> widgetOptions =  <Widget>[
-    MartHome(),
-    EarningPage(),
+    VendorHome(),
+    Orders(),
+    VendorServiceStatus(),
     ProfileScreen(),
-    MartHome(),
   ];
 
   Future<bool> onWillPop() {
@@ -34,9 +35,10 @@ class MartBottomNavigationController extends GetxController {
   void onItemTapped(int index) {
     selectedIndex.value = index;
   }
+
   @override
   void onInit() {
-    AppStrings.userType = "1";
+    AppStrings.userType = "2";
     super.onInit();
   }
 }

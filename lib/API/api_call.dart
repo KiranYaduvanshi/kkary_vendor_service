@@ -13,6 +13,7 @@ import 'package:kkary_vendors/API/models/response/Vendor_product_details.dart';
 import 'package:kkary_vendors/API/models/response/forgot_response.dart';
 import 'package:kkary_vendors/API/models/response/login_response.dart';
 import 'package:kkary_vendors/API/models/response/profie_response.dart';
+import 'package:kkary_vendors/API/models/response/vendor_all_order_response.dart';
 import 'package:kkary_vendors/API/models/response/vendor_order_details.dart';
 import 'package:kkary_vendors/API/models/response/vendor_products_response.dart';
 import 'package:kkary_vendors/API/result_exception.dart';
@@ -33,6 +34,7 @@ class CallAPI {
       debugPrint("Status  ${login.statusCode.toString()}");
       debugPrint("Message ${login.message}");
       if (login.statusCode == 200) {
+        Endpoints.token = login.data!.token!;
         debugPrint("Login..... Sucesss");
         debugPrint("Login..  ${params.email} ${params.password}");
         // _loginBool = false;
@@ -48,11 +50,11 @@ class CallAPI {
         // PrefrenceUtil.setString(
         //     AppStrings.USER_BUSINESS, "${login.data!.businessName}");
 
-        Timer(Duration(seconds: 1), () {
+        // Timer(Duration(seconds: 1), () {
           params.userType == "1"
-              ? Get.toNamed(AppRoutes.bottomNavigationMart)
-              : Get.toNamed(AppRoutes.partner);
-        });
+              ? Get.offAllNamed(AppRoutes.bottomNavigationMart)
+              : Get.offAllNamed(AppRoutes.vendorBottomNavigationMart);
+        // });
       } else {
         print("Login..... Fail");
         String message = ResultStatusCheck(
@@ -105,6 +107,11 @@ class CallAPI {
       }
     } on Exception catch (e) {
       return null;
+<<<<<<< HEAD
+    } finally {
+      print("Done");
+=======
+>>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
     }
   }
 
@@ -128,6 +135,11 @@ class CallAPI {
       }
     } on Exception catch (e) {
       return null;
+<<<<<<< HEAD
+    } finally {
+      print("Done");
+=======
+>>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
     }
   }
 
@@ -174,6 +186,32 @@ class CallAPI {
       }
     } on Exception catch (e) {
       return null;
+<<<<<<< HEAD
+    }
+  }
+
+  //API Vendor all  Order
+  Future<VendorAllOrdersResponse?> vendorOrderAll(String id) async {
+    try {
+      String url = "${Endpoints.vendorOrders}$id";
+
+      var json = await APIManager().getAllCall(url: url);
+
+      VendorAllOrdersResponse vendorAllOrdersResponse =
+          VendorAllOrdersResponse.fromJson(json);
+
+      if (vendorAllOrdersResponse.statusCode == 200) {
+        return vendorAllOrdersResponse;
+      } else {
+        String message =
+            ResultStatusCheck(status: vendorAllOrdersResponse.statusCode!)
+                .resultCheck();
+        return vendorAllOrdersResponse;
+      }
+    } on Exception catch (e) {
+      return null;
+=======
+>>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
     }
   }
 

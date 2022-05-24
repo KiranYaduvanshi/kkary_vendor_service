@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/otp_controller.dart';
+import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:velocity_x/src/extensions/string_ext.dart';
 import 'package:velocity_x/src/flutter/padding.dart';
@@ -17,7 +18,13 @@ class Otp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        leading: BackButton(color: Colors.black,),
+        centerTitle: true,
+        elevation: 0,
+        title: "Verify Job".text.black.make(),
+      ),
       body: Column(
         children: [
           Padding(
@@ -88,7 +95,9 @@ class Otp extends StatelessWidget {
                   topLeft: Radius.circular(12), topRight: Radius.circular(12)),
             ),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Get.toNamed(AppRoutes.rating);
+              },
               child: Container(
                 width: Get.width * .7,
                 height: 40,

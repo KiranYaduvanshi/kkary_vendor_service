@@ -24,6 +24,7 @@ import 'package:kkary_vendors/modules/services_vendor/binding/partnet_binding.da
 import 'package:kkary_vendors/modules/services_vendor/binding/profile_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/rating_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/service_status-binding.dart';
+import 'package:kkary_vendors/modules/services_vendor/binding/vendor_bottom_navigation-binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/vendor_home_binding.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/loginController.dart';
 import 'package:kkary_vendors/modules/services_vendor/binding/product_detail_binding.dart';
@@ -41,6 +42,7 @@ import 'package:kkary_vendors/modules/services_vendor/views/otp.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/rating.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/service_status.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/product_detail.dart';
+import 'package:kkary_vendors/modules/services_vendor/views/vendor_bottom_navigation.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/vendor_home.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/vendor_services_status.dart';
 import 'package:kkary_vendors/modules/services_vendor/views/where_live/whereLive.dart';
@@ -153,11 +155,11 @@ class AppPages {
     ),
 
     //Mart
-    // GetPage(
-    //   name: AppRoutes.orderDetailsMart,
-    //   page: () => const MartOrderStatus(),
-    //   binding: MartOrderStatusBinding(),
-    // ),
+    GetPage(
+      name: AppRoutes.orderDetailsMart,
+      page: () =>  MartOrderStatus(),
+      binding: MartOrderStatusBinding(),
+    ),
     GetPage(
       name: AppRoutes.homeMart,
       page: () => const MartHome(),
@@ -172,6 +174,11 @@ class AppPages {
       name: AppRoutes.bottomNavigationMart,
       page: () => const MartBottomNavigation(),
       binding: MartBottomNavigationBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.vendorBottomNavigationMart,
+      page: () => const VendorBottomNavigation(),
+      binding: VendorBottomNavigationBinding(),
     ),
     GetPage(
       name: AppRoutes.allProductsMart,
