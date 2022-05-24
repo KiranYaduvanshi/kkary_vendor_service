@@ -8,13 +8,8 @@ import 'custome_exception.dart';
 import 'package:http/http.dart' as http;
 
 class APIManager {
-<<<<<<< HEAD
-  // String? token = PrefrenceUtil.getString(AppStrings.token, "");
-  String token = Endpoints.token;
-=======
   String? token = PrefrenceUtil.getString(AppStrings.token, "");
   // String token = "892|0YqycBsGELZX8hIB063726zQT03SqbGTvXoJ2xGt";
->>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
 
   Future<dynamic> getAllCall({required String url}) async {
     print("Calling API: $url");
@@ -56,7 +51,6 @@ class APIManager {
 
     print("Calling API: $urlForPost");
     print("Calling API: $token");
-
 
     var responseJson;
     try {

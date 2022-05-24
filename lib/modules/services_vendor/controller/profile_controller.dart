@@ -12,29 +12,27 @@ class ProfileController extends GetxController {
   RxBool fetch = false.obs;
   final formkey = GlobalKey<FormState>();
   String uri = "";
-  TextEditingController name= TextEditingController();
-  TextEditingController bio= TextEditingController();
-  TextEditingController address= TextEditingController();
-  TextEditingController phone= TextEditingController();
-  TextEditingController email= TextEditingController();
+  TextEditingController name = TextEditingController();
+  TextEditingController bio = TextEditingController();
+  TextEditingController address = TextEditingController();
+  TextEditingController phone = TextEditingController();
+  TextEditingController email = TextEditingController();
 
   Future<void> getUserInfo() async {
     if (kDebugMode) {
       print("done");
-
     }
     await CallAPI()
         .profileInfo()
         .then((value) => info = value?.data)
         .whenComplete(() {
-          uri = "${Endpoints.imageBaseUrl}${info!.image}";
+      uri = "${Endpoints.imageBaseUrl}${info!.image}";
       name.text = info!.fname ?? "";
       bio.text = info!.bio ?? "";
       address.text = info!.address ?? "";
       phone.text = info!.mobile ?? "";
       email.text = info!.email ?? "";
       fetch.value = true;
-
     });
   }
 
