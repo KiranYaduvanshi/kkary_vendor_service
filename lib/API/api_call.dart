@@ -30,11 +30,11 @@ class CallAPI {
       var json = await APIManager().postAPICall(url: url, param: params);
 
       LoginResponse login = LoginResponse.fromJson(json);
-      debugPrint("Status  ${login.statusCode.toString()}");
-      debugPrint("Message ${login.message}");
+      //   debugPrint("Status  ${login.statusCode.toString()}");
+      //   debugPrint("Message ${login.message}");
       if (login.statusCode == 200) {
         debugPrint("Login..... Sucesss");
-        debugPrint("Login..  ${params.email} ${params.password}");
+        //    debugPrint("Login..  ${params.email} ${params.password}");
         // _loginBool = false;
         // PrefrenceUtil.setString(AppStrings.USER_EMAil, "${login.data!.email}");
         // PrefrenceUtil.setString(AppStrings.PASSWORD, "${params.password}");

@@ -39,11 +39,9 @@ class LoginController extends GetxController {
     LoginPost loginPost = LoginPost(
         email: phoneEmailController.text,
         password: passwordController.text,
-        userType: "1",
+        userType: user,
         deviceToken: token);
-
-    debugPrint(
-        "${loginPost.userType} ${loginPost.email} ${loginPost.password} ${loginPost.deviceToken}");
+    // debugPrint("${loginPost.userType} ${loginPost.email} ${loginPost.password} ${loginPost.deviceToken}");
     await CallAPI().login(params: loginPost);
 
     // ForgotPost post = ForgotPost(email: "ankitemail@gmail.com" , userType: "2");
