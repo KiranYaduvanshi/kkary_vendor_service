@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:kkary_vendors/routes/app_routes.dart';
 
 class OrderController extends GetxController {
   List<String> servicesList = [
@@ -8,4 +9,9 @@ class OrderController extends GetxController {
     "Nail Artist",
     "Hair Styler",
   ];
+
+  void goto(){
+    print("Clicked");
+    Get.toNamed(AppRoutes.otp);
+  }
 }

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:kkary_vendors/common_widgets/continue_button.dart';
 import 'package:kkary_vendors/modules/services_vendor/controller/order_ctl.dart';
 import 'package:kkary_vendors/modules/mart_vendor/views/earning_page.dart';
+import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_icons.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
@@ -13,6 +14,7 @@ import 'package:velocity_x/velocity_x.dart';
 class Orders extends StatelessWidget {
   Orders({Key? key}) : super(key: key);
 
+  OrderController _controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -107,10 +109,11 @@ class Orders extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               CustomButtons()
-                  .button(text: "Decline", color: AppColors.blueExtraDark)
+                  .button(text: "Decline", color: AppColors.blueExtraDark , fun:
+              (){})
                   .w40(context),
               CustomButtons()
-                  .button(text: "Accept", color: AppColors.blueLight)
+                  .button(text: "Accept", color: AppColors.blueLight , fun:()=> _controller.goto() )
                   .w40(context),
             ],
           ),

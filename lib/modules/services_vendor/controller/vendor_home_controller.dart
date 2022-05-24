@@ -16,7 +16,8 @@ class VendorHomeController extends GetxController {
     "Total Earnings",
     "Feedback",
     "Total Pending Jobs",
-    "Total Cancelled Jobs"
+    "Total Cancelled Jobs",
+    "Total Requests"
   ];
   List<Color> color = [
     AppColors.redHome,
@@ -25,6 +26,8 @@ class VendorHomeController extends GetxController {
     AppColors.greenHome,
     AppColors.pinkHome,
     AppColors.purpleHome,
+    AppColors.greenLight
+
   ];
 
   //
@@ -47,8 +50,8 @@ class VendorHomeController extends GetxController {
   // }
 
   goToPage(String page) {
-    if (page == "Products") {
-      Get.toNamed(AppRoutes.allProductsMart, arguments: page);
+    if (page == "Total Requests") {
+      Get.toNamed(AppRoutes.orders, arguments: page);
     } else if (page == "Orders") {
       Get.toNamed(AppRoutes.orders, arguments: page);
     } else if (page == "Delivered Orders") {

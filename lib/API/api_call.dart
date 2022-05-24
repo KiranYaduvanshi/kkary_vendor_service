@@ -13,6 +13,7 @@ import 'package:kkary_vendors/API/models/response/Vendor_product_details.dart';
 import 'package:kkary_vendors/API/models/response/forgot_response.dart';
 import 'package:kkary_vendors/API/models/response/login_response.dart';
 import 'package:kkary_vendors/API/models/response/profie_response.dart';
+import 'package:kkary_vendors/API/models/response/vendor_all_order_response.dart';
 import 'package:kkary_vendors/API/models/response/vendor_order_details.dart';
 import 'package:kkary_vendors/API/models/response/vendor_products_response.dart';
 import 'package:kkary_vendors/API/result_exception.dart';
@@ -33,6 +34,7 @@ class CallAPI {
       //   debugPrint("Status  ${login.statusCode.toString()}");
       //   debugPrint("Message ${login.message}");
       if (login.statusCode == 200) {
+        Endpoints.token = login.data!.token!;
         debugPrint("Login..... Sucesss");
         //    debugPrint("Login..  ${params.email} ${params.password}");
         // _loginBool = false;
@@ -48,11 +50,11 @@ class CallAPI {
         // PrefrenceUtil.setString(
         //     AppStrings.USER_BUSINESS, "${login.data!.businessName}");
 
-        Timer(Duration(seconds: 1), () {
-          params.userType == "1"
-              ? Get.toNamed(AppRoutes.bottomNavigationMart)
-              : Get.toNamed(AppRoutes.partner);
-        });
+        // Timer(Duration(seconds: 1), () {
+        params.userType == "1"
+            ? Get.offAllNamed(AppRoutes.bottomNavigationMart)
+            : Get.offAllNamed(AppRoutes.vendorBottomNavigationMart);
+        // });
       } else {
         print("Login..... Fail");
         String message = ResultStatusCheck(

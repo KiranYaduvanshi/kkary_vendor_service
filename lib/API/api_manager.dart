@@ -8,11 +8,18 @@ import 'custome_exception.dart';
 import 'package:http/http.dart' as http;
 
 class APIManager {
+<<<<<<< HEAD
+  // String? token = PrefrenceUtil.getString(AppStrings.token, "");
+  String token = Endpoints.token;
+=======
   String? token = PrefrenceUtil.getString(AppStrings.token, "");
   // String token = "892|0YqycBsGELZX8hIB063726zQT03SqbGTvXoJ2xGt";
+>>>>>>> 7aefae6766d3df62e0f5e79e59837a4bcb8482c8
 
   Future<dynamic> getAllCall({required String url}) async {
     print("Calling API: $url");
+
+    print("Calling API: $token");
     Uri urlForPost = Uri.parse("${Endpoints.baseUrl}$url");
     var responseJson;
     try {
@@ -27,6 +34,8 @@ class APIManager {
 
   Future<dynamic> postAllCallNonParam({required String url}) async {
     print("Calling API: $url");
+
+    print("Calling API: $token");
     Uri urlForPost = Uri.parse("${Endpoints.baseUrl}$url");
     var responseJson;
     try {
@@ -46,6 +55,9 @@ class APIManager {
     Uri urlForPost = Uri.parse("${Endpoints.baseUrl}$url");
 
     print("Calling API: $urlForPost");
+    print("Calling API: $token");
+
+
     var responseJson;
     try {
       final response = await http.post(urlForPost,

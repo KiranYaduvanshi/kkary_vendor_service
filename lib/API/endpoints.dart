@@ -1,8 +1,11 @@
 class Endpoints {
   //Base Urls Endpoints
+  static String token = "";
   static const String baseUrl = "http://13.244.84.23/api";
+
   // static const String baseUrl = "https://kkary.vickyamule.xyz/public/api";
   static const String imageBaseUrl = "http://13.244.84.23/public/assets/";
+
   // static const String imageBaseUrl =
   //     "https://kkary.vickyamule.xyz/public/assets/";
 
@@ -17,4 +20,5 @@ class Endpoints {
 
   static const String vendorOrderDetails = "/vendor-product-details/";
   static const String profileInfo = "/vendor-profile";
+  static const String vendorOrders = "/vendor-orders?type=";
 }

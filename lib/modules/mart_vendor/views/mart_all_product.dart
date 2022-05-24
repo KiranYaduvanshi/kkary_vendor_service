@@ -34,33 +34,33 @@ class MartAllProductscreen extends StatelessWidget {
           Container(
             color: AppColors.white,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 customButton(
                   imagePath: ImagePaths.icCopy,
-                  title: "Copy",
+                  title: "Add",
                   onClick: () {
-                    print("Copy ");
+                    Get.toNamed(AppRoutes.martAddProduct);
                   },
                 ).px(6),
-                Row(
-                  children: [
-                    customButton(
-                      imagePath: ImagePaths.icPdf,
-                      title: "PDF",
-                      onClick: () {
-                        print("PDF ");
-                      },
-                    ).px(6),
-                    customButton(
-                      imagePath: ImagePaths.icPrint,
-                      title: "Print",
-                      onClick: () {
-                        print("print ");
-                      },
-                    ).px(6)
-                  ],
-                )
+                // Row(
+                //   children: [
+                //     customButton(
+                //       imagePath: ImagePaths.icPdf,
+                //       title: "PDF",
+                //       onClick: () {
+                //         print("PDF ");
+                //       },
+                //     ).px(6),
+                //     customButton(
+                //       imagePath: ImagePaths.icPrint,
+                //       title: "Print",
+                //       onClick: () {
+                //         print("print ");
+                //       },
+                //     ).px(6)
+                //   ],
+                // )
               ],
             ).py(12),
           ),
@@ -144,7 +144,7 @@ class MartAllProductscreen extends StatelessWidget {
   Widget productListWidget(BuildContext context, int index) {
     VendorProductsData data = _controller.data.value[index];
     return GestureDetector(
-      onTap: ()=> Get.toNamed(AppRoutes.martOrderDetails),
+      onTap: ()=> Get.toNamed(AppRoutes.martAddProduct),
       child: Container(
         width: MediaQuery.of(context).size.width * .9,
         height: MediaQuery.of(context).size.height * .24,
@@ -171,7 +171,7 @@ class MartAllProductscreen extends StatelessWidget {
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(8),
                       bottomLeft: Radius.circular(8))),
-              child: Center(child: "#1".text.size(10).make()),
+              child: Center(child: "#${++index}".text.size(10).make()),
             ),
             Container(
               //color: Colors.amber,

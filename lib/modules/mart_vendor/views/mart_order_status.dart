@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:kkary_vendors/modules/mart_vendor/controller/mart_order_status_controller.dart';
+import 'package:kkary_vendors/routes/app_routes.dart';
 import 'package:kkary_vendors/utils/app_colors.dart';
 import 'package:kkary_vendors/utils/app_icons.dart';
-import 'package:kkary_vendors/utils/image_paths.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:kkary_vendors/utils/app_strings.dart';
 
 class MartOrderStatus extends StatelessWidget {
-  const MartOrderStatus({Key? key}) : super(key: key);
+ final MartOrderStatusController _controller = Get.find();
+
+   MartOrderStatus({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    MartOrderStatusController _controller = Get.find();
+
 
     const String classNametoLog = "Class: OrderDetailsPage";
     return Scaffold(
@@ -22,57 +24,71 @@ class MartOrderStatus extends StatelessWidget {
         centerTitle: true,
         title: _controller.pageTitle.text.make(),
         actions: [
-          AppIcons.notification.px(15),
+          InkWell(
+              onTap: () {
+                Get.toNamed(AppRoutes.martOrderDetails,
+                    arguments: "sjshk");
+              },
+              child: AppIcons.notification.px(15)),
         ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            color: AppColors.white,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                customButton(
-                  imagePath: ImagePaths.icCopy,
-                  title: "Copy",
-                  onClick: () {
-                    print("Copy $classNametoLog");
-                  },
-                ).px(6),
-                Row(
-                  children: [
-                    customButton(
-                      imagePath: ImagePaths.icPdf,
-                      title: "PDF",
-                      onClick: () {
-                        print("PDF $classNametoLog");
-                      },
-                    ).px(6),
-                    customButton(
-                      imagePath: ImagePaths.icPrint,
-                      title: "Print",
-                      onClick: () {
-                        print("print $classNametoLog");
-                      },
-                    ).px(6)
-                  ],
-                )
-              ],
-            ).py(12),
-          ),
+          // Container(
+          //   color: AppColors.white,
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: [
+          //       customButton(
+          //         imagePath: ImagePaths.icCopy,
+          //         title: "Copy",
+          //         onClick: () {
+          //           print("Copy $classNametoLog");
+          //         },
+          //       ).px(6),
+          //       Row(
+          //         children: [
+          //           customButton(
+          //             imagePath: ImagePaths.icPdf,
+          //             title: "PDF",
+          //             onClick: () {
+          //               print("PDF $classNametoLog");
+          //             },
+          //           ).px(6),
+          //           customButton(
+          //             imagePath: ImagePaths.icPrint,
+          //             title: "Print",
+          //             onClick: () {
+          //               print("print $classNametoLog");
+          //             },
+          //           ).px(6)
+          //         ],
+          //       )
+          //     ],
+          //   ).py(12),
+          // ),
           ListView.builder(
             padding: const EdgeInsets.only(top: 5),
             itemCount: 6,
-            itemBuilder: (BuildContext context, int index) => orderedItem(
-                count: "1",
-                ctx: context,
-                orderID: "OD4771709634",
-                productName: "Banana 12 Pcs",
-                totalPrice: "12",
-                whenOrdered: "1 Day Ago",
-                orderStatus: "Pending",
-                paymentMethod: "Online"),
+            itemBuilder: (BuildContext context, int index) => InkWell(
+              onTap: () {
+                // Get.toNamed(AppRoutes.home);
+
+                Get.toNamed(AppRoutes.martOrderDetails,
+                    arguments: "Order Details", preventDuplicates: false);
+
+              },
+              child: orderedItem(
+                  count: "1",
+                  ctx: context,
+                  orderID: "OD4771709634",
+                  productName: "Banana 12 Pcs",
+                  totalPrice: "12",
+                  whenOrdered: "1 Day Ago",
+                  orderStatus: "Pending",
+                  paymentMethod: "Online"),
+            ),
           ).expand(),
           // SingleChildScrollView(
           //   child: Column(
@@ -126,7 +142,7 @@ class MartOrderStatus extends StatelessWidget {
               //   ),
               // ],
               ),
-          height: 130,
+          height: 150,
           child: Row(
             children: [
               Container(
@@ -309,7 +325,7 @@ class MartOrderStatus extends StatelessWidget {
               ),
               Container(
                 alignment: Alignment.center,
-                height: 150,
+                height: 160,
                 width: MediaQuery.of(ctx).size.width * .07,
                 decoration: const BoxDecoration(
                   color: AppColors.blueLight,
